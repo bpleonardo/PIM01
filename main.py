@@ -1,8 +1,12 @@
 import time
+from typing import TYPE_CHECKING
 
 from modules.data import get_data_file
 from modules.users import User, login_account, create_account
 from modules.utilities import get_choice, print_menu
+
+if TYPE_CHECKING:
+    from modules.courses import Subject
 
 
 def create_or_login_user():
@@ -121,6 +125,17 @@ def select_subject(user: User) -> str:
     return selected_subject.id
 
 
+def show_lesson(user: User, subject: 'Subject', lesson_id: str):
+    lesson = next(i for i in subject.lessons if i.id == lesson_id)
+    print_menu(
+        lesson.content,
+        '',
+        'Pressione Enter para ir para a próxima aula.',
+        title=lesson.title,
+    )
+    input()
+
+
 def main():
     user = None
     while user is None:
@@ -148,6 +163,16 @@ def main():
     time.sleep(1)
 
     subject = select_subject(user)
+    subject = next(s for s in user.course.subjects if s.id == subject)
+
+    current_lesson = user.current_lesson.get(subject.id)
+    if current_lesson is None:
+        current_lesson = subject.lessons[0].id
+
+    if current_lesson[-1] == 'L':
+        show_lesson(user, subject, current_lesson)
+    elif current_lesson[-1] == 'A':
+        show_assessment(user, subject, current_lesson)
 
 
 if __name__ == '__main__':

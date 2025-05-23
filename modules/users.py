@@ -1,6 +1,6 @@
 import sys
 import time
-from typing import Optional
+from typing import Mapping, Optional
 from getpass import getpass
 from functools import cached_property
 
@@ -19,6 +19,7 @@ class User:
         city: str,
         username: str,
         course_id: Optional[str] = None,
+        current_lesson: Optional[Mapping[str, str]] = None,
     ):
         self.age = age
         self.username = username
@@ -26,6 +27,9 @@ class User:
         self.gender = gender
         self.city = city
         self._course_id = course_id
+        self.current_lesson: Mapping[str, str] = (
+            current_lesson if current_lesson else {}
+        )
 
     def __eq__(self, other):
         if not isinstance(other, User):
