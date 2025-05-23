@@ -39,7 +39,7 @@ def select_course(user: User):
     user: :class:`User`
         O usuário que está selecionando o curso.
     """
-    courses = get_data_file('cursos.json')['courses']
+    courses = tuple(get_data_file('cursos.json').values())
 
     texts = [
         'Parece que você não está matrículado em nenhum curso.',
