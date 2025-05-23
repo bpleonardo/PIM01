@@ -1,262 +1,260 @@
-{
-  "courses": [
-    {
-      "id": "ADS",
-      "name": "Análise e Desenvolvimento de Sistemas",
-      "subjects": [
-        {
-          "id": "ADPLC",
-          "name": "Pensamento Lógico Computacional em Python",
-          "lessons": [
-            {
-              "id": "ADPLC001L",
-              "title": "Introdução à Lógica de Programação",
-              "content": "Nesta aula, você aprenderá os conceitos básicos de lógica de programação, incluindo algoritmos, fluxogramas e pseudocódigos. Serão apresentados exemplos simples que ajudam a entender como os programas são estruturados."
-            },
-            {
-              "id": "ADPLC002L",
-              "title": "Variáveis e Tipos de Dados",
-              "content": "Aprenda como declarar variáveis em Python, os principais tipos de dados (inteiros, strings, booleanos) e como utilizá-los para armazenar e manipular informações no seu código."
-            },
-            {
-              "id": "ADPLC003L",
-              "title": "Condicionais",
-              "content": "Entenda como funcionam as estruturas condicionais if, elif e else em Python. Essa aula mostra como tomar decisões dentro do código de acordo com diferentes situações."
-            },
-            {
-              "id": "ADPLC004L",
-              "title": "Laços de Repetição",
-              "content": "Explore as estruturas de repetição for e while em Python. Com elas, você poderá executar blocos de código várias vezes, automatizando tarefas repetitivas."
-            },
-            {
-              "id": "ADPLC005L",
-              "title": "Funções em Python",
-              "content": "Aprenda a criar e utilizar funções em Python. A aula explica como definir funções, passar parâmetros e retornar valores, facilitando a reutilização de código."
-            }
-          ],
-          "assessment": {
-            "id": "ADPLC001A",
-            "questions": [
-              {
-                "question": "O que é um algoritmo?",
-                "options": {
-                  "a": "Uma linguagem de programação.",
-                  "b": "Um tipo de variável.",
-                  "c": "Um conjunto de instruções para resolver um problema.",
-                  "d": "Uma estrutura de repetição.",
-                  "e": "Um banco de dados."
-                },
-                "answer": "c"
-              },
-              {
-                "question": "Qual é o símbolo usado para comentários em Python?",
-                "options": {
-                  "a": "//",
-                  "b": "/* */",
-                  "c": "#",
-                  "d": "<!-- -->",
-                  "e": "**"
-                },
-                "answer": "c"
-              },
-              {
-                "question": "Qual destas é uma variável válida em Python?",
-                "options": {
-                  "a": "2nome",
-                  "b": "nome_completo",
-                  "c": "nome completo",
-                  "d": "nome-completo",
-                  "e": "@nome"
-                },
-                "answer": "b"
-              },
-              {
-                "question": "O que a função print() faz em Python?",
-                "options": {
-                  "a": "Cria uma nova variável.",
-                  "b": "Lê um valor do teclado.",
-                  "c": "Exibe uma saída na tela.",
-                  "d": "Compara dois valores.",
-                  "e": "Encerra o programa."
-                },
-                "answer": "c"
-              },
-              {
-                "question": "Qual das opções representa um número inteiro em Python?",
-                "options": {
-                  "a": "'10'",
-                  "b": "10.5",
-                  "c": "True",
-                  "d": "10",
-                  "e": "\"dez\""
-                },
-                "answer": "d"
-              },
-              {
-                "question": "Qual estrutura permite repetir blocos de código em Python?",
-                "options": {
-                  "a": "if",
-                  "b": "def",
-                  "c": "print",
-                  "d": "for",
-                  "e": "return"
-                },
-                "answer": "d"
-              },
-              {
-                "question": "Como se define uma função em Python?",
-                "options": {
-                  "a": "function nome()",
-                  "b": "def nome():",
-                  "c": "func nome()",
-                  "d": "define nome()",
-                  "e": "function: nome()"
-                },
-                "answer": "b"
-              },
-              {
-                "question": "O que o operador '==' faz em Python?",
-                "options": {
-                  "a": "Atribui valor a uma variável.",
-                  "b": "Compara dois valores.",
-                  "c": "Verifica se um número é ímpar.",
-                  "d": "Cria uma função.",
-                  "e": "Define um loop."
-                },
-                "answer": "b"
-              },
-              {
-                "question": "Qual das alternativas representa um valor booleano em Python?",
-                "options": {
-                  "a": "verdadeiro",
-                  "b": "sim",
-                  "c": "True",
-                  "d": "1.0",
-                  "e": "'false'"
-                },
-                "answer": "c"
-              },
-              {
-                "question": "Qual estrutura é usada para decisões em Python?",
-                "options": {
-                  "a": "def",
-                  "b": "loop",
-                  "c": "repeat",
-                  "d": "if",
-                  "e": "func"
-                },
-                "answer": "d"
-              }
-            ]
+[
+  {
+    "id": "ADS",
+    "name": "Análise e Desenvolvimento de Sistemas",
+    "subjects": [
+      {
+        "id": "ADPLC",
+        "name": "Pensamento Lógico Computacional em Python",
+        "lessons": [
+          {
+            "id": "ADPLC001L",
+            "title": "Introdução à Lógica de Programação",
+            "content": "Nesta aula, você aprenderá os conceitos básicos de lógica de programação, incluindo algoritmos, fluxogramas e pseudocódigos. Serão apresentados exemplos simples que ajudam a entender como os programas são estruturados."
+          },
+          {
+            "id": "ADPLC002L",
+            "title": "Variáveis e Tipos de Dados",
+            "content": "Aprenda como declarar variáveis em Python, os principais tipos de dados (inteiros, strings, booleanos) e como utilizá-los para armazenar e manipular informações no seu código."
+          },
+          {
+            "id": "ADPLC003L",
+            "title": "Condicionais",
+            "content": "Entenda como funcionam as estruturas condicionais if, elif e else em Python. Essa aula mostra como tomar decisões dentro do código de acordo com diferentes situações."
+          },
+          {
+            "id": "ADPLC004L",
+            "title": "Laços de Repetição",
+            "content": "Explore as estruturas de repetição for e while em Python. Com elas, você poderá executar blocos de código várias vezes, automatizando tarefas repetitivas."
+          },
+          {
+            "id": "ADPLC005L",
+            "title": "Funções em Python",
+            "content": "Aprenda a criar e utilizar funções em Python. A aula explica como definir funções, passar parâmetros e retornar valores, facilitando a reutilização de código."
           }
-        }
-      ]
-    },
-    {
-      "id": "ED",
-      "name": "Educação Física",
-      "subjects": [
-        {
-          "id": "EDBIE",
-          "name": "Biomecânica e Exercício",
-          "lessons": [
+        ],
+        "assessment": {
+          "id": "ADPLC001A",
+          "questions": [
             {
-              "id": "EDBIE001L",
-              "title": "Introdução à Biomecânica",
-              "content": "Estudo dos movimentos do corpo humano e as forças que agem sobre ele durante a prática de atividades físicas."
+              "question": "O que é um algoritmo?",
+              "options": {
+                "a": "Uma linguagem de programação.",
+                "b": "Um tipo de variável.",
+                "c": "Um conjunto de instruções para resolver um problema.",
+                "d": "Uma estrutura de repetição.",
+                "e": "Um banco de dados."
+              },
+              "answer": "c"
             },
             {
-              "id": "EDBIE002L",
-              "title": "Cadeias Musculares",
-              "content": "Compreensão da função e interação entre músculos durante o movimento corporal."
+              "question": "Qual é o símbolo usado para comentários em Python?",
+              "options": {
+                "a": "//",
+                "b": "/* */",
+                "c": "#",
+                "d": "<!-- -->",
+                "e": "**"
+              },
+              "answer": "c"
             },
             {
-              "id": "EDBIE003L",
-              "title": "Análise de Movimento",
-              "content": "Técnicas para avaliar e melhorar a eficiência dos movimentos corporais."
+              "question": "Qual destas é uma variável válida em Python?",
+              "options": {
+                "a": "2nome",
+                "b": "nome_completo",
+                "c": "nome completo",
+                "d": "nome-completo",
+                "e": "@nome"
+              },
+              "answer": "b"
             },
             {
-              "id": "EDBIE004L",
-              "title": "Lesões e Prevenção",
-              "content": "Identificação de causas de lesões comuns e estratégias para evitá-las."
+              "question": "O que a função print() faz em Python?",
+              "options": {
+                "a": "Cria uma nova variável.",
+                "b": "Lê um valor do teclado.",
+                "c": "Exibe uma saída na tela.",
+                "d": "Compara dois valores.",
+                "e": "Encerra o programa."
+              },
+              "answer": "c"
             },
             {
-              "id": "EDBIE005L",
-              "title": "Aplicação da Biomecânica no Esporte",
-              "content": "Como aplicar os conceitos biomecânicos para melhorar o desempenho esportivo."
+              "question": "Qual das opções representa um número inteiro em Python?",
+              "options": {
+                "a": "'10'",
+                "b": "10.5",
+                "c": "True",
+                "d": "10",
+                "e": "\"dez\""
+              },
+              "answer": "d"
+            },
+            {
+              "question": "Qual estrutura permite repetir blocos de código em Python?",
+              "options": {
+                "a": "if",
+                "b": "def",
+                "c": "print",
+                "d": "for",
+                "e": "return"
+              },
+              "answer": "d"
+            },
+            {
+              "question": "Como se define uma função em Python?",
+              "options": {
+                "a": "function nome()",
+                "b": "def nome():",
+                "c": "func nome()",
+                "d": "define nome()",
+                "e": "function: nome()"
+              },
+              "answer": "b"
+            },
+            {
+              "question": "O que o operador '==' faz em Python?",
+              "options": {
+                "a": "Atribui valor a uma variável.",
+                "b": "Compara dois valores.",
+                "c": "Verifica se um número é ímpar.",
+                "d": "Cria uma função.",
+                "e": "Define um loop."
+              },
+              "answer": "b"
+            },
+            {
+              "question": "Qual das alternativas representa um valor booleano em Python?",
+              "options": {
+                "a": "verdadeiro",
+                "b": "sim",
+                "c": "True",
+                "d": "1.0",
+                "e": "'false'"
+              },
+              "answer": "c"
+            },
+            {
+              "question": "Qual estrutura é usada para decisões em Python?",
+              "options": {
+                "a": "def",
+                "b": "loop",
+                "c": "repeat",
+                "d": "if",
+                "e": "func"
+              },
+              "answer": "d"
             }
-          ],
-          "assessment": {
-            "id": "EDBIE001A",
-            "questions": [
-              {
-                "question": "O que estuda a biomecânica?",
-                "options": {
-                  "a": "A mente humana.",
-                  "b": "O metabolismo celular.",
-                  "c": "Os movimentos e forças sobre o corpo.",
-                  "d": "A anatomia dos músculos.",
-                  "e": "O sistema digestivo."
-                },
-                "answer": "c"
-              }
-            ]
-          }
+          ]
         }
-      ]
-    },
-    {
-      "id": "ADM",
-      "name": "Administração",
-      "subjects": [
-        {
-          "id": "AMESP",
-          "name": "Empreendedorismo e Startups",
-          "lessons": [
+      }
+    ]
+  },
+  {
+    "id": "ED",
+    "name": "Educação Física",
+    "subjects": [
+      {
+        "id": "EDBIE",
+        "name": "Biomecânica e Exercício",
+        "lessons": [
+          {
+            "id": "EDBIE001L",
+            "title": "Introdução à Biomecânica",
+            "content": "Estudo dos movimentos do corpo humano e as forças que agem sobre ele durante a prática de atividades físicas."
+          },
+          {
+            "id": "EDBIE002L",
+            "title": "Cadeias Musculares",
+            "content": "Compreensão da função e interação entre músculos durante o movimento corporal."
+          },
+          {
+            "id": "EDBIE003L",
+            "title": "Análise de Movimento",
+            "content": "Técnicas para avaliar e melhorar a eficiência dos movimentos corporais."
+          },
+          {
+            "id": "EDBIE004L",
+            "title": "Lesões e Prevenção",
+            "content": "Identificação de causas de lesões comuns e estratégias para evitá-las."
+          },
+          {
+            "id": "EDBIE005L",
+            "title": "Aplicação da Biomecânica no Esporte",
+            "content": "Como aplicar os conceitos biomecânicos para melhorar o desempenho esportivo."
+          }
+        ],
+        "assessment": {
+          "id": "EDBIE001A",
+          "questions": [
             {
-              "id": "AMESP001L",
-              "title": "O que é Empreender?",
-              "content": "Nesta aula veremos o conceito de empreendedorismo, suas origens e importância no cenário econômico."
-            },
-            {
-              "id": "AMESP002L",
-              "title": "Modelos de Negócio",
-              "content": "Compreenda os diferentes tipos de modelos de negócios e como estruturá-los."
-            },
-            {
-              "id": "AMESP003L",
-              "title": "Validação de Ideia",
-              "content": "Como testar sua ideia antes de investir recursos valiosos nela."
-            },
-            {
-              "id": "AMESP004L",
-              "title": "Pitch de Negócio",
-              "content": "Aprenda como apresentar sua ideia de forma clara e objetiva para investidores."
-            },
-            {
-              "id": "AMESP005L",
-              "title": "Crescimento e Escalabilidade",
-              "content": "Como planejar e executar a expansão de uma startup."
+              "question": "O que estuda a biomecânica?",
+              "options": {
+                "a": "A mente humana.",
+                "b": "O metabolismo celular.",
+                "c": "Os movimentos e forças sobre o corpo.",
+                "d": "A anatomia dos músculos.",
+                "e": "O sistema digestivo."
+              },
+              "answer": "c"
             }
-          ],
-          "assessment": {
-            "id": "AMESP001A",
-            "questions": [
-              {
-                "question": "O que caracteriza um empreendedor?",
-                "options": {
-                  "a": "Alguém que segue ordens.",
-                  "b": "Alguém que busca estabilidade.",
-                  "c": "Alguém que cria soluções e assume riscos.",
-                  "d": "Alguém que prefere empregos públicos.",
-                  "e": "Alguém que evita inovações."
-                },
-                "answer": "c"
-              }
-            ]
-          }
+          ]
         }
-      ]
-    }
-  ]
-}
+      }
+    ]
+  },
+  {
+    "id": "ADM",
+    "name": "Administração",
+    "subjects": [
+      {
+        "id": "AMESP",
+        "name": "Empreendedorismo e Startups",
+        "lessons": [
+          {
+            "id": "AMESP001L",
+            "title": "O que é Empreender?",
+            "content": "Nesta aula veremos o conceito de empreendedorismo, suas origens e importância no cenário econômico."
+          },
+          {
+            "id": "AMESP002L",
+            "title": "Modelos de Negócio",
+            "content": "Compreenda os diferentes tipos de modelos de negócios e como estruturá-los."
+          },
+          {
+            "id": "AMESP003L",
+            "title": "Validação de Ideia",
+            "content": "Como testar sua ideia antes de investir recursos valiosos nela."
+          },
+          {
+            "id": "AMESP004L",
+            "title": "Pitch de Negócio",
+            "content": "Aprenda como apresentar sua ideia de forma clara e objetiva para investidores."
+          },
+          {
+            "id": "AMESP005L",
+            "title": "Crescimento e Escalabilidade",
+            "content": "Como planejar e executar a expansão de uma startup."
+          }
+        ],
+        "assessment": {
+          "id": "AMESP001A",
+          "questions": [
+            {
+              "question": "O que caracteriza um empreendedor?",
+              "options": {
+                "a": "Alguém que segue ordens.",
+                "b": "Alguém que busca estabilidade.",
+                "c": "Alguém que cria soluções e assume riscos.",
+                "d": "Alguém que prefere empregos públicos.",
+                "e": "Alguém que evita inovações."
+              },
+              "answer": "c"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
