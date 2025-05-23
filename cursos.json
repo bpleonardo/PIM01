@@ -6,6 +6,7 @@
       {
         "id": "ADPLC",
         "name": "Pensamento Lógico Computacional em Python",
+        "max_grade": 10,
         "lessons": [
           {
             "id": "ADPLC001L",
@@ -38,6 +39,7 @@
           "questions": [
             {
               "index": 0,
+              "weight": 10,
               "question": "O que é um algoritmo?",
               "options": {
                 "a": "Uma linguagem de programação.",
@@ -50,6 +52,7 @@
             },
             {
               "index": 1,
+              "weight": 10,
               "question": "Qual é o símbolo usado para comentários em Python?",
               "options": {
                 "a": "//",
@@ -62,6 +65,7 @@
             },
             {
               "index": 2,
+              "weight": 10,
               "question": "Qual destas é uma variável válida em Python?",
               "options": {
                 "a": "2nome",
@@ -74,6 +78,7 @@
             },
             {
               "index": 3,
+              "weight": 10,
               "question": "O que a função print() faz em Python?",
               "options": {
                 "a": "Cria uma nova variável.",
@@ -86,6 +91,7 @@
             },
             {
               "index": 4,
+              "weight": 10,
               "question": "Qual das opções representa um número inteiro em Python?",
               "options": {
                 "a": "'10'",
@@ -98,6 +104,7 @@
             },
             {
               "index": 5,
+              "weight": 10,
               "question": "Qual estrutura permite repetir blocos de código em Python?",
               "options": {
                 "a": "if",
@@ -110,6 +117,7 @@
             },
             {
               "index": 6,
+              "weight": 10,
               "question": "Como se define uma função em Python?",
               "options": {
                 "a": "function nome()",
@@ -122,6 +130,7 @@
             },
             {
               "index": 7,
+              "weight": 10,
               "question": "O que o operador '==' faz em Python?",
               "options": {
                 "a": "Atribui valor a uma variável.",
@@ -134,6 +143,7 @@
             },
             {
               "index": 8,
+              "weight": 10,
               "question": "Qual das alternativas representa um valor booleano em Python?",
               "options": {
                 "a": "verdadeiro",
@@ -146,6 +156,7 @@
             },
             {
               "index": 9,
+              "weight": 10,
               "question": "Qual estrutura é usada para decisões em Python?",
               "options": {
                 "a": "def",
@@ -168,6 +179,7 @@
       {
         "id": "EDBIE",
         "name": "Biomecânica e Exercício",
+        "max_grade": 10,
         "lessons": [
           {
             "id": "EDBIE001L",
@@ -200,6 +212,7 @@
           "questions": [
             {
               "index": 0,
+              "weight": 100,
               "question": "O que estuda a biomecânica?",
               "options": {
                 "a": "A mente humana.",
@@ -222,6 +235,7 @@
       {
         "id": "AMESP",
         "name": "Empreendedorismo e Startups",
+        "max_grade": 10,
         "lessons": [
           {
             "id": "AMESP001L",
@@ -254,6 +268,7 @@
           "questions": [
             {
               "index": 0,
+              "weight": 100,
               "question": "O que caracteriza um empreendedor?",
               "options": {
                 "a": "Alguém que segue ordens.",

@@ -157,10 +157,20 @@ def show_assessment(user: User, subject: 'Subject', _):
         answer = show_question(question, assessment)
         results[question.index] = (answer, question.answer)
 
-    score = int(sum(1 for i in results.values() if i[0] == i[1]) / len(results) * 10)
+    grade = round(
+        sum(
+            question.weight
+            for question in assessment.questions
+            if results[question.index][0] == question.answer
+        )
+        / 100
+        * subject.max_grade,
+        1,
+    )
+
     print_menu(
         'Prova finalizada.',
-        f'Você tirou {score}/{len(results)}.',
+        f'Você tirou {grade}/{subject.max_grade}.',
         '',
         'Aperte Enter para fazer a revisão.',
         title=subject.name,

@@ -7,6 +7,7 @@ Choice: TypeAlias = Literal['a', 'b', 'c', 'd', 'e']
 @dataclass(slots=True)
 class Question:
     index: int
+    weight: int
     question: str
     options: Mapping[Choice, str]
     answer: Choice
@@ -51,6 +52,7 @@ class Lesson:
 class Subject:
     id: str
     name: str
+    max_grade: int
     lessons: List[Lesson]
     assessment: Test
 
@@ -59,6 +61,7 @@ class Subject:
         return cls(
             id=data['id'],
             name=data['name'],
+            max_grade=data['max_grade'],
             lessons=[
                 Lesson.from_dict(lesson)
                 for lesson in sorted(data['lessons'], key=lambda x: x['id'])
