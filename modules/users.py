@@ -195,7 +195,7 @@ def create_account() -> User:  # noqa: C901
 
         break
 
-    user = User(username, age, full_name, city, gender)
+    user = User(full_name, age, gender, city, username)
     user._set_password(password)
 
     user.write()
