@@ -34,6 +34,9 @@ def print_menu(*texts: str, title: str = '', sep: str = '-'):
 
     for text in texts:
         # Printa o texto impedindo que ele ultrapasse o tamanho máximo.
+        if text == '':
+            print()
+            continue
         for text_slice in (text[i : i + max_len] for i in range(0, len(text), max_len)):
             print(text_slice)
 
