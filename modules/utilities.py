@@ -20,8 +20,8 @@ def print_menu(*texts: str, title: str = '', sep: str = '-'):
     """
     terminal_size = shutil.get_terminal_size().columns
 
-    # Limita ao tamanho máximo do terminal.
-    max_len = min(max(len(text) for text in texts), terminal_size)
+    # Limita o tamanho a pelo menos o tamanho do título e no máximo o tamanho do terminal.
+    max_len = min(max(len(title) + 8, *(len(text) for text in texts)), terminal_size)
 
     print(CLEAR_SCREEN, end='')
 
