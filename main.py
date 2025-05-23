@@ -30,7 +30,7 @@ def create_or_login_user():
     raise RuntimeError('Você não deveria ver isso...')
 
 
-def select_course(user: User):
+def set_user_course(user: User):
     """
     Seleciona um curso para o usuário.
 
@@ -138,7 +138,7 @@ def main():
     time.sleep(1)
 
     if user.course_id is None:
-        select_course(user)
+        set_user_course(user)
 
     assert user.course is not None  # FIXME: Remover em produção.
 
