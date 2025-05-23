@@ -6,6 +6,7 @@ Choice: TypeAlias = Literal['a', 'b', 'c', 'd', 'e']
 
 @dataclass(slots=True)
 class Question:
+    index: int
     question: str
     options: Mapping[Choice, str]
     answer: Choice
@@ -24,7 +25,10 @@ class Test:
     def from_dict(cls, data: dict) -> 'Test':
         return cls(
             id=data['id'],
-            questions=[Question.from_dict(question) for question in data['questions']],
+            questions=[
+                Question.from_dict(question)
+                for question in sorted(data['questions'], key=lambda x: x['index'])
+            ],
         )
 
 
@@ -51,7 +55,10 @@ class Subject:
         return cls(
             id=data['id'],
             name=data['name'],
-            lessons=[Lesson.from_dict(lesson) for lesson in data['lessons']],
+            lessons=[
+                Lesson.from_dict(lesson)
+                for lesson in sorted(data['lessons'], key=lambda x: x['id'])
+            ],
             assessment=Test.from_dict(data['assessment']),
         )
 
@@ -67,5 +74,8 @@ class Course:
         return cls(
             id=data['id'],
             name=data['name'],
-            subjects=[Subject.from_dict(subject) for subject in data['subjects']],
+            subjects=[
+                Subject.from_dict(subject)
+                for subject in sorted(data['subjects'], key=lambda x: x['name'])
+            ],
         )

@@ -94,7 +94,7 @@ def select_subject(user: User) -> str:
 
     texts = ['Selecione a disciplina desejada:', '']
 
-    subjects = sorted(user.course.subjects, key=lambda x: x.name)
+    subjects = user.course.subjects
 
     for i, subject in enumerate(subjects):
         texts.append(f'[{i + 1}] {subject.name}')
