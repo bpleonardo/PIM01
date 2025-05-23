@@ -82,6 +82,41 @@ def select_course(user: User):
     input()
 
 
+def select_subject(user: User) -> str:
+    assert user.course is not None  # FIXME: Remover em produção.
+
+    texts = ['Selecione a disciplina desejada:', '']
+
+    subjects = user.course.subjects
+
+    for i, subject in enumerate(subjects):
+        texts.append(f'[{i + 1}] {subject.name}')
+
+    while True:
+        print_menu(*texts, title='Seleção de matéria')
+
+        choice = get_choice([str(i) for i in range(1, len(subjects) + 1)], '> ')
+        if choice is None:
+            print('Opção inválida.')
+            time.sleep(0.5)
+            continue
+
+        choice = int(choice)
+
+        selected_subject = subjects[choice - 1]
+
+        print_menu(
+            f'Você selecionou {selected_subject.name}. Isso está correto? [S/n]',
+            title='Seleção de matéria',
+        )
+        choice = get_choice(['s', 'n'], '> ', 's')
+
+        if choice == 's':
+            break
+
+    return selected_subject.id
+
+
 def main():
     user = None
     while user is None:
@@ -107,6 +142,8 @@ def main():
 
     print_menu('Você está matriculado no curso', user.course.name, title='Entrada')
     time.sleep(1)
+
+    subject = select_subject(user)
 
 
 if __name__ == '__main__':
