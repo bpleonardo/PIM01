@@ -1,12 +1,8 @@
 import time
-from typing import TYPE_CHECKING
 
 from modules.data import get_data_file
 from modules.users import User, login_account, create_account
 from modules.utilities import get_choice, print_menu
-
-if TYPE_CHECKING:
-    from .types_1 import Courses
 
 
 def create_or_login_user():
@@ -43,7 +39,7 @@ def select_course(user: User):
     user: :class:`User`
         O usuário que está selecionando o curso.
     """
-    courses: 'Courses' = get_data_file('cursos.json')['courses']
+    courses = get_data_file('cursos.json')['courses']
 
     texts = [
         'Parece que você não está matrículado em nenhum curso.',
@@ -75,7 +71,7 @@ def select_course(user: User):
         if choice == 's':
             break
 
-    user.course = selected_course['id']
+    user.course_id = selected_course['id']
     user.write()
 
     print_menu(
@@ -104,8 +100,13 @@ def main():
     print_menu(f'Bem vindo, {user.first_name}', title='Entrada')
     time.sleep(1)
 
-    if user.course is None:
+    if user.course_id is None:
         select_course(user)
+
+    assert user.course is not None  # FIXME: Remover em produção.
+
+    print_menu('Você está matriculado no curso', user.course.name, title='Entrada')
+    time.sleep(1)
 
 
 if __name__ == '__main__':

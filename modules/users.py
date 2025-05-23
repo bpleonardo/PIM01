@@ -2,19 +2,22 @@ import sys
 import time
 from typing import Optional
 from getpass import getpass
-from dataclasses import dataclass
+from functools import cached_property
 
 from .data import get_data_file, save_data_file
+from .courses import Course
 from .passwords import hash_password, check_password
 from .utilities import print_menu
 
 
-@dataclass(slots=True)
 class User:
-    username: str
-    age: int
-    full_name: str
-    course: Optional[str] = None
+    def __init__(
+        self, username: str, age: int, full_name: str, course_id: Optional[str] = None
+    ):
+        self.age = age
+        self.username = username
+        self.full_name = full_name
+        self._course_id = course_id
 
     def __eq__(self, other):
         if not isinstance(other, User):
@@ -25,6 +28,27 @@ class User:
     @property
     def first_name(self):
         return self.full_name.split(' ')[0]
+
+    @property
+    def course_id(self):
+        return self._course_id
+
+    @course_id.setter
+    def course_id(self, value):
+        self._course_id = value
+
+        # Precisamos remover o cache do curso, pois ele pode ter mudado.
+        del self.course
+
+    @cached_property
+    def course(self) -> Optional[Course]:
+        if self.course_id is None:
+            return None
+
+        courses = get_data_file('cursos.json')
+        course = courses[self.course_id]
+
+        return Course.from_dict(course)
 
     @classmethod
     def find(cls, username: str) -> Optional['User']:
@@ -91,7 +115,7 @@ class User:
             'age': self.age,
             'username': self.username,
             'full_name': self.full_name,
-            'course': self.course,
+            'course_id': self._course_id,
         }
 
         users = get_data_file('usuarios.json')

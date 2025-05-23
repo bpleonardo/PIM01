@@ -1,5 +1,5 @@
-[
-  {
+{
+  "ADS": {
     "id": "ADS",
     "name": "Análise e Desenvolvimento de Sistemas",
     "subjects": [
@@ -151,8 +151,8 @@
       }
     ]
   },
-  {
-    "id": "ED",
+  "EDF": {
+    "id": "EDF",
     "name": "Educação Física",
     "subjects": [
       {
@@ -204,7 +204,7 @@
       }
     ]
   },
-  {
+  "ADM": {
     "id": "ADM",
     "name": "Administração",
     "subjects": [
@@ -257,4 +257,4 @@
       }
     ]
   }
-]
+}
