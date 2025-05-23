@@ -1,0 +1,50 @@
+show-fixes = true
+select = [
+  # All rules
+  "ASYNC",          # flake8-async
+  "BLE",            # flake8-blind-except
+  "FBT",            # flake8-boolean-trap
+  "B",              # flake8-bugbear
+  "C4",             # flake8-comprehensions
+  "FIX",            # flake8-fixme
+  "ICN",            # flake8-import-conventions
+  "G",              # flake8-logging-format
+  "PIE",            # flake8-pie
+  # "T20",          # flake-print, include in production code
+  "RET",            # flake8-return
+  "SIM",            # flake8-simplify
+  "TC",            # flake8-type-checking
+  "FLY",            # flynt
+  "I",              # isort
+  "C90",            # mccabe
+  "PERF",           # perflint
+  "F",              # pyflakes
+  "RUF",            # ruff
+
+  # Specific rules
+  "S1",             # flake8-bandit (1xx)
+  "Q003",           # flake8-quotes (003)
+  "W29", "W605",    # pycodestyle (29x, 605)
+  "E4", "E7", "E9", # pycodestyle (4xx, 7xx, 9xx)
+  # Todo: FURB
+]
+ignore = ["S101"]
+target-version = "py38"
+output-format = "grouped"
+
+[format]
+quote-style = "single"
+docstring-code-format = true
+
+[flake8-quotes]
+inline-quotes="single"
+
+[flake8-type-checking]
+quote-annotations = true
+
+[pydocstyle]
+convention = "numpy"
+
+[isort]
+length-sort = true
+force-single-line = false
