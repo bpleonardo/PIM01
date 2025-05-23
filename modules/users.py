@@ -120,14 +120,8 @@ class User:
         """
         Salva os dados do usuário no disco.
         """
-        data = {
-            'age': self.age,
-            'city': self.city,
-            'course_id': self._course_id,
-            'full_name': self.full_name,
-            'gender': self.gender,
-            'username': self.username,
-        }
+        # Coleta os dados dinamicamente, removendo o prefixo '_'.
+        data = {key.lstrip('_'): value for key, value in self.__dict__.items()}
 
         users = get_data_file('usuarios.json')
         users[self.username] = data
