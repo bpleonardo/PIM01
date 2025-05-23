@@ -2,20 +2,25 @@ import sys
 import time
 from typing import Optional
 from getpass import getpass
+from dataclasses import dataclass
 
 from .data import get_data_file, save_data_file
 from .passwords import hash_password, check_password
 from .utilities import print_menu
 
 
+@dataclass(slots=True)
 class User:
-    def __init__(
-        self, username: str, age: int, full_name: str, course: Optional[str] = None
-    ):
-        self.age = age
-        self.username = username
-        self.full_name = full_name
-        self.course = course
+    username: str
+    age: int
+    full_name: str
+    course: Optional[str] = None
+
+    def __eq__(self, other):
+        if not isinstance(other, User):
+            return NotImplemented
+
+        return self.username == other.username
 
     @property
     def first_name(self):
