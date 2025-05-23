@@ -39,7 +39,9 @@ def set_user_course(user: User):
     user: :class:`User`
         O usuário que está selecionando o curso.
     """
-    courses = tuple(get_data_file('cursos.json').values())
+    courses = tuple(
+        sorted(get_data_file('cursos.json').values(), key=lambda x: x['name'])
+    )
 
     texts = [
         'Parece que você não está matrículado em nenhum curso.',
@@ -88,7 +90,7 @@ def select_subject(user: User) -> str:
 
     texts = ['Selecione a disciplina desejada:', '']
 
-    subjects = user.course.subjects
+    subjects = sorted(user.course.subjects, key=lambda x: x.name)
 
     for i, subject in enumerate(subjects):
         texts.append(f'[{i + 1}] {subject.name}')
