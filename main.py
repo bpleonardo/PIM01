@@ -63,7 +63,8 @@ def select_course(user: User):
         selected_course = courses[choice - 1]
 
         print_menu(
-            f'Você selecionou {selected_course["name"]}. Isso está correto? [S/n]',
+            f'Você selecionou {selected_course["name"]}.',
+            'Isso está correto? [S/n]',
             title='Seleção de curso',
         )
         choice = get_choice(['s', 'n'], '> ', 's')
@@ -106,7 +107,8 @@ def select_subject(user: User) -> str:
         selected_subject = subjects[choice - 1]
 
         print_menu(
-            f'Você selecionou {selected_subject.name}. Isso está correto? [S/n]',
+            f'Você selecionou {selected_subject.name}.',
+            'Isso está correto? [S/n]',
             title='Seleção de matéria',
         )
         choice = get_choice(['s', 'n'], '> ', 's')
