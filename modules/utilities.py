@@ -1,7 +1,8 @@
+import shutil
 from typing import Union, Optional, Sequence
 
 # \ESC[2J = Limpa a tela, \ESC[H = Move o cursor para o início da tela.
-# REF: https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences
+# REF: https://learn.microsoft.com/pt-br/windows/console/console-virtual-terminal-sequences
 CLEAR_SCREEN = '\033[2J\033[H'
 
 
@@ -17,7 +18,10 @@ def print_menu(*texts: str, title: str = '', sep: str = '-'):
     sep: :class:`str`
         Separador a ser utilizado para o título. O padrão é "-".
     """
-    max_len = max(len(text) for text in texts)
+    terminal_size = shutil.get_terminal_size().columns
+
+    # Limita ao tamanho máximo do terminal.
+    max_len = min(max(len(text) for text in texts), terminal_size)
 
     print(CLEAR_SCREEN, end='')
 
@@ -29,7 +33,9 @@ def print_menu(*texts: str, title: str = '', sep: str = '-'):
         print(sep * max_len)
 
     for text in texts:
-        print(text)
+        # Printa o texto impedindo que ele ultrapasse o tamanho máximo.
+        for text_slice in (text[i : i + max_len] for i in range(0, len(text), max_len)):
+            print(text_slice)
 
     print(sep * max_len)
 
