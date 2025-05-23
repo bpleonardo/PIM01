@@ -38,7 +38,8 @@ class User:
         self._course_id = value
 
         # Precisamos remover o cache do curso, pois ele pode ter mudado.
-        del self.course
+        if 'course' in self.__dict__:
+            del self.course
 
     @cached_property
     def course(self) -> Optional[Course]:
