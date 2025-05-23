@@ -1,6 +1,6 @@
 import sys
 import time
-from typing import Mapping, Optional
+from typing import Optional, MutableMapping
 from getpass import getpass
 from functools import cached_property
 
@@ -19,7 +19,7 @@ class User:
         city: str,
         username: str,
         course_id: Optional[str] = None,
-        current_lesson: Optional[Mapping[str, str]] = None,
+        current_lesson: Optional[MutableMapping[str, str]] = None,
     ):
         self.age = age
         self.username = username
@@ -27,7 +27,7 @@ class User:
         self.gender = gender
         self.city = city
         self._course_id = course_id
-        self.current_lesson: Mapping[str, str] = (
+        self.current_lesson: MutableMapping[str, str] = (
             current_lesson if current_lesson else {}
         )
 
@@ -128,6 +128,14 @@ class User:
         users[self.username] = data
 
         save_data_file('usuarios.json', users)
+
+    def update(self):
+        """
+        Atualiza essa instância do usuário a partir do disco.
+        """
+        data = get_data_file('usuarios.json')
+        for key, value in data[self.username].items():
+            setattr(self, key, value)
 
 
 def create_account() -> User:  # noqa: C901
