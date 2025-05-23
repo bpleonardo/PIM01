@@ -1,12 +1,12 @@
 import time
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Tuple, Mapping, Sequence
 
 from modules.data import get_data_file
 from modules.users import User, login_account, create_account
 from modules.utilities import get_choice, print_menu
 
 if TYPE_CHECKING:
-    from modules.courses import Subject
+    from modules.courses import Test, Choice, Subject, Question
 
 
 def create_or_login_user():
@@ -125,7 +125,105 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
         'Pressione Enter para ir para a próxima aula.',
         title=lesson.title,
     )
+
+    try:
+        user.current_lesson[subject.id] = next(
+            i for i in subject.lessons if i.index == lesson.index + 1
+        ).id
+    except StopIteration:
+        # Não temos mais aulas.
+        # A prova é a próxima.
+        user.current_lesson[subject.id] = subject.assessment.id
+
+    user.write()
+
     input()
+
+
+def show_assessment(user: User, subject: 'Subject', _):
+    assessment = subject.assessment
+    print_menu(
+        'Você finalizou todas as aulas.',
+        '',
+        'Aperte Enter para começar a prova.',
+        title=subject.name,
+    )
+
+    input()
+
+    results = {}
+
+    for question in assessment.questions:
+        answer = show_question(question, assessment)
+        results[question.index] = (answer, question.answer)
+
+    score = int(sum(1 for i in results.values() if i[0] == i[1]) / len(results) * 10)
+    print_menu(
+        'Prova finalizada.',
+        f'Você tirou {score}/{len(results)}.',
+        '',
+        'Aperte Enter para fazer a revisão.',
+        title=subject.name,
+    )
+
+    input()
+
+    start_revision(assessment.questions, results)
+
+
+def start_revision(
+    questions: Sequence['Question'], results: Mapping[int, Tuple['Choice', 'Choice']]
+):
+    for question in questions:
+        selected_answer = results[question.index][0]
+        right_answer = results[question.index][1]
+
+        texts = [question.question, '']
+        if selected_answer == right_answer:
+            texts.extend(
+                (
+                    'Você acertou esta questão.',
+                    '',
+                    'Resposta correta:',
+                    f'[{right_answer}] {question.options[right_answer]}',
+                )
+            )
+        else:
+            texts.extend(
+                (
+                    'Você errou esta questão.',
+                    '',
+                    'Sua resposta:',
+                    f'[{selected_answer}] {question.options[selected_answer]}',
+                    '',
+                    'Resposta correta:',
+                    f'[{right_answer}] {question.options[right_answer]}',
+                )
+            )
+
+        texts.extend(('', 'Aperte Enter para continuar.'))
+
+        print_menu(
+            *texts,
+            title=f'Questão {question.index + 1} de {len(questions)}.',
+        )
+        input()
+
+
+def show_question(question: 'Question', assessment: 'Test') -> str:
+    while True:
+        print_menu(
+            question.question,
+            '',
+            *(f'[{option}] {content}' for option, content in question.options.items()),
+            title=f'Questão {question.index + 1} de {len(assessment.questions)}.',
+        )
+
+        choice = get_choice(tuple(question.options.keys()), '> ')
+        if choice is not None:
+            return choice
+        print('Opção inválida.')
+        time.sleep(0.5)
 
 
 def main():
@@ -157,13 +255,19 @@ def main():
     subject = select_subject(user)
     subject = next(s for s in user.course.subjects if s.id == subject)
 
-    current_lesson = user.current_lesson.get(subject.id)
-    if current_lesson is None:
-        current_lesson = subject.lessons[0].id
+    while True:
+        user.update()
 
-    if current_lesson[-1] == 'L':
-        show_lesson(user, subject, current_lesson)
-    elif current_lesson[-1] == 'A':
+        current_lesson = user.current_lesson.get(subject.id)
+        if current_lesson is None:
+            current_lesson = subject.lessons[0].id
+
+        if current_lesson[-1] == 'L':
+            show_lesson(user, subject, current_lesson)
+        elif current_lesson[-1] == 'A':
+            break
+
+    if current_lesson[-1] == 'A':
         show_assessment(user, subject, current_lesson)
 
 
