@@ -37,6 +37,7 @@
           "id": "ADPLC001A",
           "questions": [
             {
+              "index": 0,
               "question": "O que é um algoritmo?",
               "options": {
                 "a": "Uma linguagem de programação.",
@@ -48,6 +49,7 @@
               "answer": "c"
             },
             {
+              "index": 1,
               "question": "Qual é o símbolo usado para comentários em Python?",
               "options": {
                 "a": "//",
@@ -59,6 +61,7 @@
               "answer": "c"
             },
             {
+              "index": 2,
               "question": "Qual destas é uma variável válida em Python?",
               "options": {
                 "a": "2nome",
@@ -70,6 +73,7 @@
               "answer": "b"
             },
             {
+              "index": 3,
               "question": "O que a função print() faz em Python?",
               "options": {
                 "a": "Cria uma nova variável.",
@@ -81,6 +85,7 @@
               "answer": "c"
             },
             {
+              "index": 4,
               "question": "Qual das opções representa um número inteiro em Python?",
               "options": {
                 "a": "'10'",
@@ -92,6 +97,7 @@
               "answer": "d"
             },
             {
+              "index": 5,
               "question": "Qual estrutura permite repetir blocos de código em Python?",
               "options": {
                 "a": "if",
@@ -103,6 +109,7 @@
               "answer": "d"
             },
             {
+              "index": 6,
               "question": "Como se define uma função em Python?",
               "options": {
                 "a": "function nome()",
@@ -114,6 +121,7 @@
               "answer": "b"
             },
             {
+              "index": 7,
               "question": "O que o operador '==' faz em Python?",
               "options": {
                 "a": "Atribui valor a uma variável.",
@@ -125,6 +133,7 @@
               "answer": "b"
             },
             {
+              "index": 8,
               "question": "Qual das alternativas representa um valor booleano em Python?",
               "options": {
                 "a": "verdadeiro",
@@ -136,6 +145,7 @@
               "answer": "c"
             },
             {
+              "index": 9,
               "question": "Qual estrutura é usada para decisões em Python?",
               "options": {
                 "a": "def",
@@ -189,6 +199,7 @@
           "id": "EDBIE001A",
           "questions": [
             {
+              "index": 0,
               "question": "O que estuda a biomecânica?",
               "options": {
                 "a": "A mente humana.",
@@ -242,6 +253,7 @@
           "id": "AMESP001A",
           "questions": [
             {
+              "index": 0,
               "question": "O que caracteriza um empreendedor?",
               "options": {
                 "a": "Alguém que segue ordens.",
