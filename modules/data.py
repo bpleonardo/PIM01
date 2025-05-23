@@ -36,4 +36,4 @@ def save_data_file(path: str, data: Any):
         Dados a serem salvos no arquivo JSON.
     """
     with open(path, 'w', encoding='utf-8') as file:
-        json.dump(data, file, indent=2)
+        json.dump(data, file, ensure_ascii=False, indent=2)
