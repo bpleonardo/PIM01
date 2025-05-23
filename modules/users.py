@@ -7,16 +7,24 @@ from functools import cached_property
 from .data import get_data_file, save_data_file
 from .courses import Course
 from .passwords import hash_password, check_password
-from .utilities import print_menu
+from .utilities import get_choice, print_menu
 
 
 class User:
     def __init__(
-        self, username: str, age: int, full_name: str, course_id: Optional[str] = None
+        self,
+        full_name: str,
+        age: int,
+        gender: Optional[str],
+        city: str,
+        username: str,
+        course_id: Optional[str] = None,
     ):
         self.age = age
         self.username = username
         self.full_name = full_name
+        self.gender = gender
+        self.city = city
         self._course_id = course_id
 
     def __eq__(self, other):
@@ -114,9 +122,11 @@ class User:
         """
         data = {
             'age': self.age,
-            'username': self.username,
-            'full_name': self.full_name,
+            'city': self.city,
             'course_id': self._course_id,
+            'full_name': self.full_name,
+            'gender': self.gender,
+            'username': self.username,
         }
 
         users = get_data_file('usuarios.json')
@@ -125,7 +135,7 @@ class User:
         save_data_file('usuarios.json', users)
 
 
-def create_account() -> User:
+def create_account() -> User:  # noqa: C901
     """
     Cadastra um novo usuário.
 
@@ -143,6 +153,18 @@ def create_account() -> User:
             break
 
     while True:
+        gender = get_choice(
+            ['h', 'm', 'n'], 'Seu gênero ([h]omem, [m]ulher, [n]ão especificar) > '
+        )
+
+        if gender is not None:
+            break
+        print('Opção inválida.\n')
+
+    if gender == 'n':
+        gender = None
+
+    while True:
         age = input('Sua idade > ')
         if not age.isdigit():
             print('Idade inválida.\n')
@@ -154,6 +176,11 @@ def create_account() -> User:
             sys.exit(0)
 
         break
+
+    while True:
+        city = input('Sua cidade > ').strip().title()
+        if city != '':
+            break
 
     while True:
         username = input('Seu usuário > ')
@@ -174,7 +201,7 @@ def create_account() -> User:
 
         break
 
-    user = User(username, age, full_name)
+    user = User(username, age, full_name, city, gender)
     user._set_password(password)
 
     user.write()
