@@ -38,6 +38,10 @@ class Lesson:
     title: str
     content: str
 
+    @property
+    def index(self) -> int:
+        return int(self.id[-4:-1])
+
     @classmethod
     def from_dict(cls, data: dict) -> 'Lesson':
         return cls(**data)
