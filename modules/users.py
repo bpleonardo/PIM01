@@ -87,10 +87,7 @@ class User:
     def _set_password(self, new_password: str):
         logins = get_data_file('logins.json')
 
-        data = logins.get(self.username, {})
-
-        data['password'] = hash_password(new_password)
-        logins[self.username] = data
+        logins[self.username] = hash_password(new_password)
 
         save_data_file('logins.json', logins)
 
@@ -109,12 +106,12 @@ class User:
             Se a senha é igual à armazenada.
         """
         logins = get_data_file('logins.json')
-        user = logins.get(self.username)
+        user_password = logins.get(self.username)
 
-        if user is None:
+        if user_password is None:
             return False
 
-        return check_password(user['password'], password)
+        return check_password(user_password, password)
 
     def write(self):
         """
