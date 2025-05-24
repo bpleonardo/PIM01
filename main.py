@@ -184,6 +184,14 @@ def show_assessment(user: User, subject: 'Subject', _):
 
     start_revision(assessment.questions, results)
 
+    print_menu(
+        'Prova revisada.',
+        'Aperte Enter para selecionar outra matéria.',
+        title=subject.name,
+    )
+
+    input()
+
 
 def start_revision(
     questions: Sequence['Question'], results: Mapping[int, Tuple['Choice', 'Choice']]
