@@ -20,6 +20,7 @@ class User:
         username: str,
         course_id: Optional[str] = None,
         current_lesson: Optional[MutableMapping[str, str]] = None,
+        grades: Optional[MutableMapping[str, float]] = None,
     ):
         self.age = age
         self.username = username
@@ -27,6 +28,7 @@ class User:
         self.gender = gender
         self.city = city
         self._course_id = course_id
+        self.grades: MutableMapping[str, float] = grades if grades else {}
         self.current_lesson: MutableMapping[str, str] = (
             current_lesson if current_lesson else {}
         )

@@ -163,10 +163,14 @@ def show_assessment(user: User, subject: 'Subject', _):
             for question in assessment.questions
             if results[question.index][0] == question.answer
         )
-        / 100
-        * subject.max_grade,
-        1,
+        / 100,
+        3,
     )
+    user.grades[subject.id] = grade
+    user.current_lesson[subject.id] = '-'
+    user.write()
+
+    grade = round(grade * subject.max_grade, 1)
 
     print_menu(
         'Prova finalizada.',
@@ -271,7 +275,6 @@ def main():
         current_lesson = user.current_lesson.get(subject.id)
         if current_lesson is None:
             current_lesson = subject.lessons[0].id
-
         if current_lesson[-1] == 'L':
             show_lesson(user, subject, current_lesson)
         elif current_lesson[-1] == 'A':
