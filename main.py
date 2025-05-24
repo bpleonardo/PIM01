@@ -274,21 +274,22 @@ def main():
     print_menu('Você está matriculado no curso', user.course.name, title='Entrada')
     time.sleep(1)
 
-    subject = select_subject(user)
-    subject = next(s for s in user.course.subjects if s.id == subject)
-
     while True:
-        user.update()
+        subject = select_subject(user)
+        subject = next(s for s in user.course.subjects if s.id == subject)
 
-        current_lesson = user.current_lesson.get(subject.id)
-        if current_lesson is None:
-            current_lesson = subject.lessons[0].id
-        if current_lesson[-1] == 'L':
-            show_lesson(user, subject, current_lesson)
-        elif current_lesson[-1] == 'A':
-            break
+        while True:
+            user.update()
 
-    show_assessment(user, subject, current_lesson)
+            current_lesson = user.current_lesson.get(subject.id)
+            if current_lesson is None:
+                current_lesson = subject.lessons[0].id
+            if current_lesson[-1] == 'L':
+                show_lesson(user, subject, current_lesson)
+            elif current_lesson[-1] == 'A':
+                break
+
+        show_assessment(user, subject, current_lesson)
 
 
 if __name__ == '__main__':
