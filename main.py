@@ -288,8 +288,7 @@ def main():
         elif current_lesson[-1] == 'A':
             break
 
-    if current_lesson[-1] == 'A':
-        show_assessment(user, subject, current_lesson)
+    show_assessment(user, subject, current_lesson)
 
 
 if __name__ == '__main__':
