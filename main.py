@@ -164,9 +164,9 @@ def show_assessment(user: User, subject: 'Subject', _):
             if results[question.index][0] == question.answer
         )
         / 100,
-        3,
+        5,
     )
-    user.grades[subject.id] = grade
+    user.grades[subject.id] = grade * 100
     user.current_lesson[subject.id] = '-'
     user.write()
 
