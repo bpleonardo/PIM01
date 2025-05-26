@@ -174,52 +174,6 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
     input()
 
 
-def show_all_lessons(user: User, subject: 'Subject'):
-    """
-    Mostra todas as aulas de uma matéria para o usuário, permitindo que ele
-    escolha uma para revisar ou fazer a avaliação.
-
-    Parameters
-    ----------
-    user: :class:`User`
-        O usuário que está revisando as aulas.
-    subject: :class:`Subject`
-        A matéria cujas aulas serão revisadas.
-    """
-    texts = [
-        'Você já assistiu todas as aulas desta matéria.',
-        '',
-        'Selecione a aula que deseja revisar:',
-    ]
-
-    test_index = subject.lessons[-1].index + 1
-    exit_index = test_index + 1
-
-    texts.extend(f'[{lesson.index}] {lesson.title}' for lesson in subject.lessons)
-    texts.extend((f'[{test_index}] Prova', f'[{exit_index}] Voltar'))
-
-    while True:
-        print_menu(*texts, title=subject.name)
-        choice = get_choice(tuple(map(str, range(1, exit_index + 1))), '> ')
-        if choice is None:
-            print('Opção inválida.')
-            time.sleep(0.5)
-            continue
-
-        choice = int(choice)
-
-        if choice == exit_index:
-            return
-
-        if choice == test_index:
-            show_test(user, subject)
-        else:
-            lesson = next(
-                lesson for lesson in subject.lessons if lesson.index == choice
-            )
-            show_lesson(user, subject, lesson.id)
-
-
 def show_test(user: User, subject: 'Subject'):
     """
     Exibe a avaliação de uma matéria para o usuário, coleta as respostas e calcula a nota.
@@ -293,6 +247,37 @@ def show_test(user: User, subject: 'Subject'):
     input()
 
 
+def show_question(question: 'Question', test: 'Test') -> str:
+    """
+    Exibe uma questão da avaliação e coleta a resposta do usuário.
+
+    Parameters
+    ----------
+    question: :class:`Question`
+        A questão a ser exibida.
+    test: :class:`Test`
+        A avaliação à qual a questão pertence.
+
+    Returns
+    -------
+    :class:`str`
+        A resposta escolhida pelo usuário.
+    """
+    while True:
+        print_menu(
+            question.question,
+            '',
+            *(f'[{option}] {content}' for option, content in question.options.items()),
+            title=f'Questão {question.index + 1} de {len(test.questions)}.',
+        )
+
+        choice = get_choice(tuple(question.options.keys()), '> ')
+        if choice is not None:
+            return choice
+        print('Opção inválida.')
+        time.sleep(0.5)
+
+
 def start_revision(
     questions: Sequence['Question'], results: Mapping[int, Tuple['Choice', 'Choice']]
 ):
@@ -344,35 +329,50 @@ def start_revision(
         input()
 
 
-def show_question(question: 'Question', test: 'Test') -> str:
+def show_all_lessons(user: User, subject: 'Subject'):
     """
-    Exibe uma questão da avaliação e coleta a resposta do usuário.
+    Mostra todas as aulas de uma matéria para o usuário, permitindo que ele
+    escolha uma para revisar ou fazer a avaliação.
 
     Parameters
     ----------
-    question: :class:`Question`
-        A questão a ser exibida.
-    test: :class:`Test`
-        A avaliação à qual a questão pertence.
-
-    Returns
-    -------
-    :class:`str`
-        A resposta escolhida pelo usuário.
+    user: :class:`User`
+        O usuário que está revisando as aulas.
+    subject: :class:`Subject`
+        A matéria cujas aulas serão revisadas.
     """
-    while True:
-        print_menu(
-            question.question,
-            '',
-            *(f'[{option}] {content}' for option, content in question.options.items()),
-            title=f'Questão {question.index + 1} de {len(test.questions)}.',
-        )
+    texts = [
+        'Você já assistiu todas as aulas desta matéria.',
+        '',
+        'Selecione a aula que deseja revisar:',
+    ]
 
-        choice = get_choice(tuple(question.options.keys()), '> ')
-        if choice is not None:
-            return choice
-        print('Opção inválida.')
-        time.sleep(0.5)
+    test_index = subject.lessons[-1].index + 1
+    exit_index = test_index + 1
+
+    texts.extend(f'[{lesson.index}] {lesson.title}' for lesson in subject.lessons)
+    texts.extend((f'[{test_index}] Prova', f'[{exit_index}] Voltar'))
+
+    while True:
+        print_menu(*texts, title=subject.name)
+        choice = get_choice(tuple(map(str, range(1, exit_index + 1))), '> ')
+        if choice is None:
+            print('Opção inválida.')
+            time.sleep(0.5)
+            continue
+
+        choice = int(choice)
+
+        if choice == exit_index:
+            return
+
+        if choice == test_index:
+            show_test(user, subject)
+        else:
+            lesson = next(
+                lesson for lesson in subject.lessons if lesson.index == choice
+            )
+            show_lesson(user, subject, lesson.id)
 
 
 def main():
