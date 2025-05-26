@@ -1,9 +1,9 @@
 import shutil
 from typing import Union, Optional, Sequence
 
-# \ESC[2J = Limpa a tela, \ESC[H = Move o cursor para o início da tela.
-# REF: https://learn.microsoft.com/pt-br/windows/console/console-virtual-terminal-sequences
-CLEAR_SCREEN = '\033[2J\033[H'
+# \ESC[2J = Limpa a tela, \033[3J = Apaga o histórico de rolagem, \ESC[H = Move o cursor para o início da tela.
+# REF:
+CLEAR_SCREEN = '\033[H\033[2J\033[3J'
 
 
 def print_menu(*texts: str, title: str = '', sep: str = '-'):
