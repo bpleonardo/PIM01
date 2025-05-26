@@ -83,6 +83,7 @@ def set_user_course(user: User):
 
     print_menu(
         f'{user.first_name}, você foi matriculado no curso "{selected_course["name"]}".',
+        '',
         'Aperte Enter para continuar.',
         title='Seleção de curso',
     )
