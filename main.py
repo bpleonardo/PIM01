@@ -142,7 +142,7 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
         except StopIteration:
             # Não temos mais aulas.
             # A prova é a próxima.
-            user.current_lesson[subject.id] = subject.assessment.id
+            user.current_lesson[subject.id] = subject.test.id
 
         user.write()
 
@@ -176,7 +176,7 @@ def show_all_lessons(user: User, subject: 'Subject'):
             return
 
         if choice == test_index:
-            show_assessment(user, subject, 0)
+            show_test(user, subject, 0)
         else:
             lesson = next(
                 lesson for lesson in subject.lessons if lesson.index == choice
@@ -184,8 +184,8 @@ def show_all_lessons(user: User, subject: 'Subject'):
             show_lesson(user, subject, lesson.id)
 
 
-def show_assessment(user: User, subject: 'Subject', _):
-    assessment = subject.assessment
+def show_test(user: User, subject: 'Subject', _):
+    test = subject.test
     print_menu(
         'Você finalizou todas as aulas.',
         '',
@@ -197,14 +197,14 @@ def show_assessment(user: User, subject: 'Subject', _):
 
     results = {}
 
-    for question in assessment.questions:
-        answer = show_question(question, assessment)
+    for question in test.questions:
+        answer = show_question(question, test)
         results[question.index] = (answer, question.answer)
 
     grade = round(
         sum(
             question.weight
-            for question in assessment.questions
+            for question in test.questions
             if results[question.index][0] == question.answer
         )
         / 100,
@@ -227,7 +227,7 @@ def show_assessment(user: User, subject: 'Subject', _):
 
     input()
 
-    start_revision(assessment.questions, results)
+    start_revision(test.questions, results)
 
     action = (
         'escolher outra matéria'
@@ -284,13 +284,13 @@ def start_revision(
         input()
 
 
-def show_question(question: 'Question', assessment: 'Test') -> str:
+def show_question(question: 'Question', test: 'Test') -> str:
     while True:
         print_menu(
             question.question,
             '',
             *(f'[{option}] {content}' for option, content in question.options.items()),
-            title=f'Questão {question.index + 1} de {len(assessment.questions)}.',
+            title=f'Questão {question.index + 1} de {len(test.questions)}.',
         )
 
         choice = get_choice(tuple(question.options.keys()), '> ')
@@ -341,7 +341,7 @@ def main():
         if current_lesson[-1] == '-':
             show_all_lessons(user, subject)
         if current_lesson[-1] == 'A':
-            show_assessment(user, subject, current_lesson)
+            show_test(user, subject, current_lesson)
 
 
 if __name__ == '__main__':

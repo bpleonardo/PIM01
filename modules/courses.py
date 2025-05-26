@@ -56,12 +56,12 @@ class Lesson:
 
 @dataclass
 class Subject:
-    __slots__ = ('assessment', 'id', 'lessons', 'max_grade', 'name')
+    __slots__ = ('id', 'lessons', 'max_grade', 'name', 'test')
     id: str
     name: str
     max_grade: int
     lessons: List[Lesson]
-    assessment: Test
+    test: Test
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Subject':
@@ -73,7 +73,7 @@ class Subject:
                 Lesson.from_dict(lesson)
                 for lesson in sorted(data['lessons'], key=lambda x: x['id'])
             ],
-            assessment=Test.from_dict(data['assessment']),
+            test=Test.from_dict(data['test']),
         )
 
 

@@ -77,7 +77,7 @@
                   "additionalProperties": false
                 }
               },
-              "assessment": {
+              "test": {
                 "type": "object",
                 "description": "A avaliação da disciplina.",
                 "properties": {
@@ -180,7 +180,7 @@
               "name",
               "max_grade",
               "lessons",
-              "assessment"
+              "test"
             ],
             "additionalProperties": false
           }

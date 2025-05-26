@@ -34,7 +34,7 @@
             "content": "Aprenda a criar e utilizar funções em Python. A aula explica como definir funções, passar parâmetros e retornar valores, facilitando a reutilização de código."
           }
         ],
-        "assessment": {
+        "test": {
           "id": "ADPLC001A",
           "questions": [
             {
@@ -207,7 +207,7 @@
             "content": "Como aplicar os conceitos biomecânicos para melhorar o desempenho esportivo."
           }
         ],
-        "assessment": {
+        "test": {
           "id": "EDBIE001A",
           "questions": [
             {
@@ -263,7 +263,7 @@
             "content": "Como planejar e executar a expansão de uma startup."
           }
         ],
-        "assessment": {
+        "test": {
           "id": "AMESP001A",
           "questions": [
             {

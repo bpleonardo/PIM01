@@ -59,7 +59,7 @@ _**Este arquivo deve estar presente para a execução do programa.**_
           - **`title`** _(string, obrigatório)_: O título da aula.
           - **`content`** _(string, obrigatório)_: O conteúdo da aula.
 
-      - **`assessment`** _(objeto, obrigatório)_: A avaliação da disciplina.
+      - **`test`** _(objeto, obrigatório)_: A avaliação da disciplina.
 
         - **`id`** _(string, obrigatório)_: O ID da avaliação, consistindo no ID da matéria seguido de um número sequencial de 3 digitos seguido da letra A. Deve seguir a expressão regular: `^[A-Z]{5}[0-9]{3}A$`.
 
