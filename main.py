@@ -89,7 +89,7 @@ def set_user_course(user: User):
     input()
 
 
-def select_subject(user: User) -> str:
+def select_subject(user: User) -> 'Subject':
     assert user.course is not None  # FIXME: Remover em produção.
 
     texts = ['Selecione a disciplina desejada:', '']
@@ -114,7 +114,7 @@ def select_subject(user: User) -> str:
 
         break
 
-    return selected_subject.id
+    return selected_subject
 
 
 def show_lesson(user: User, subject: 'Subject', lesson_id: str):
@@ -327,7 +327,6 @@ def main():
 
     while True:
         subject = select_subject(user)
-        subject = next(s for s in user.course.subjects if s.id == subject)
 
         while True:
             user.update()
