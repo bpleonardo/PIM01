@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Usuários",
+  "type": "object",
+  "patternProperties": {
+    "^.+$": {
+      "type": "object",
+      "description": "A chave é o nome de usuário do aluno.",
+      "properties": {
+        "age": {
+          "type": "number",
+          "description": "A idade do aluno.",
+          "minimum": 14
+        },
+        "username": {
+          "type": "string",
+          "description": "O nome de usuário do aluno."
+        },
+        "full_name": {
+          "type": "string",
+          "description": "O nome completo do aluno."
+        },
+        "gender": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "O gênero do aluno. `null` caso não especificado.",
+          "enum": [
+            "h",
+            "m",
+            null
+          ]
+        },
+        "city": {
+          "type": "string",
+          "description": "A cidade onde o aluno reside."
+        },
+        "course_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{3}$",
+          "description": "O ID do curso em que o aluno está matriculado. `null` caso não esteja matriculado.",
+          "examples": [
+            "ADS",
+            "EDF"
+          ]
+        },
+        "grades": {
+          "type": "object",
+          "description": "As notas do aluno nas disciplinas.",
+          "patternProperties": {
+            "^[A-Z]{5}$": {
+              "type": "number",
+              "description": "A chave é o ID da disciplina e o valor é a nota do aluno na disciplina em forma de porcentagem.",
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "additionalProperties": false
+        },
+        "current_lesson": {
+          "type": "object",
+          "description": "As aulas ou provas que o aluno está fazendo atualmente.",
+          "patternProperties": {
+            "^[A-Z]{5}$": {
+              "type": "string",
+              "description": "A chave é o ID da disciplina e o valor é o id da aula ou prova. Caso o aluno já tenha terminado todas as aulas e provas, o valor será \"-\".",
+              "pattern": "^(([A-Z]{5}[0-9]{3}(A|L))|-)$",
+              "examples": [
+                "ADPLC002L",
+                "ADPLC001A"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "age",
+        "username",
+        "full_name",
+        "gender",
+        "city",
+        "course_id",
+        "grades",
+        "current_lesson"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

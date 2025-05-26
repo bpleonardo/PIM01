@@ -1,0 +1,22 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/logins.json"
+      ],
+      "url": "./json_schemas/logins.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/cursos.json"
+      ],
+      "url": "./json_schemas/cursos.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/usuarios.json"
+      ],
+      "url": "./json_schemas/usuarios.schema.json"
+    },
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cursos.",
+  "description": "Representa os cursos e suas respectivas disciplinas, aulas e avaliações.",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Z]{3}$": {
+      "type": "object",
+      "description": "Representa um curso. A chave é o ID do curso, consistindo em 3 iniciais em maiúsculas.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "O ID do curso, consistindo em 3 iniciais em maiúsculas.",
+          "pattern": "^[A-Z]{3}$",
+          "examples": [
+            "ADS",
+            "EDF"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "description": "O nome do curso."
+        },
+        "subjects": {
+          "type": "array",
+          "description": "Lista de disciplinas do curso.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "O ID da disciplina, consistindo em 2 letras iniciais do curso e 3 letras iniciais da disciplina.",
+                "pattern": "^[A-Z]{5}$",
+                "examples": [
+                  "ADPLC",
+                  "EDBIE"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "description": "O nome da disciplina."
+              },
+              "max_grade": {
+                "type": "number",
+                "description": "A nota máxima que pode ser atribuída na disciplina.",
+                "minimum": 0
+              },
+              "lessons": {
+                "type": "array",
+                "description": "Lista de aulas da disciplina.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "O ID da aula, consistindo no ID da matéria seguido de um número sequencial de 3 digitos seguido da letra L.",
+                      "pattern": "^[A-Z]{5}[0-9]{3}L$",
+                      "examples": [
+                        "ADPLC001L",
+                        "EDBIE003L"
+                      ]
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "O título da aula."
+                    },
+                    "content": {
+                      "type": "string",
+                      "description": "O conteúdo da aula."
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "content"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "assessment": {
+                "type": "object",
+                "description": "A avaliação da disciplina.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "O ID da avaliação, consistindo no ID da matéria seguido de um número sequencial de 3 digitos seguido da letra A.",
+                    "pattern": "^[A-Z]{5}[0-9]{3}A$",
+                    "examples": [
+                      "ADPLC001A",
+                      "EDBIE003A"
+                    ]
+                  },
+                  "questions": {
+                    "type": "array",
+                    "description": "Lista de questões da avaliação.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "index": {
+                          "type": "integer",
+                          "description": "O índice da questão na avaliação.",
+                          "minimum": 0
+                        },
+                        "weight": {
+                          "type": "number",
+                          "description": "O peso da questão na avaliação. Deve ser um número entre 0 a 100 representando a porcentagem da nota total.",
+                          "minimum": 0,
+                          "maximum": 100
+                        },
+                        "question": {
+                          "type": "string",
+                          "description": "O texto da questão."
+                        },
+                        "options": {
+                          "type": "object",
+                          "description": "As opções de resposta da questão.",
+                          "properties": {
+                            "a": {
+                              "type": "string",
+                              "description": "Opção A da questão."
+                            },
+                            "b": {
+                              "type": "string",
+                              "description": "Opção B da questão."
+                            },
+                            "c": {
+                              "type": "string",
+                              "description": "Opção C da questão."
+                            },
+                            "d": {
+                              "type": "string",
+                              "description": "Opção D da questão."
+                            },
+                            "e": {
+                              "type": "string",
+                              "description": "Opção E da questão."
+                            }
+                          },
+                          "required": [
+                            "a",
+                            "b",
+                            "c",
+                            "d",
+                            "e"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "answer": {
+                          "type": "string",
+                          "description": "A resposta correta da questão. Deve ser uma letra correspondente a uma das opções.",
+                          "enum": [
+                            "a",
+                            "b",
+                            "c",
+                            "d",
+                            "e"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "index",
+                        "weight",
+                        "question",
+                        "options",
+                        "answer"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "questions"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "max_grade",
+              "lessons",
+              "assessment"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "subjects"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
