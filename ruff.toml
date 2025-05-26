@@ -29,7 +29,7 @@ select = [
   # Todo: FURB
 ]
 ignore = ["S101"]
-target-version = "py312"
+target-version = "py39"
 output-format = "grouped"
 
 [format]
