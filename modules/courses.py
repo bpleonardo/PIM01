@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, List, Literal, Mapping
+from typing import TYPE_CHECKING, Any, List, Literal, Mapping
 from dataclasses import dataclass
 
 if TYPE_CHECKING:
@@ -18,6 +18,19 @@ class Question:
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Question':
+        """
+        Cria uma instância de :class:`Question` a partir de um dicionário.
+
+        Parameters
+        ----------
+        data: Mapping[Any, Any]
+            Dicionário contendo os dados da questão.
+
+        Returns
+        -------
+        :class:`Question`
+            Instância da questão.
+        """
         return cls(**data)
 
 
@@ -29,6 +42,20 @@ class Test:
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Test':
+        """
+        Cria uma instância de :class:`Test` a partir de um dicionário.
+        Também são criadas instâncias de todos os objetos recursivamente.
+
+        Parameters
+        ----------
+        data: Mapping[Any, Any]
+            Dicionário contendo os dados da prova.
+
+        Returns
+        -------
+        :class:`Test`
+            Instância da prova com todos os objetos internos criados.
+        """
         return cls(
             id=data['id'],
             questions=[
@@ -50,7 +77,21 @@ class Lesson:
         return int(self.id[-4:-1])
 
     @classmethod
-    def from_dict(cls, data: dict) -> 'Lesson':
+    def from_dict(cls, data: Mapping[Any, Any]) -> 'Lesson':
+        """
+        Cria uma instância de :class:`Lesson` a partir de um dicionário.
+
+        Parameters
+        ----------
+        data: Mapping[Any, Any]
+            Dicionário contendo os dados da aula.
+
+        Returns
+        -------
+        :class:`Lesson`
+            Instância da aula.
+        """
+
         return cls(**data)
 
 
@@ -64,7 +105,21 @@ class Subject:
     test: Test
 
     @classmethod
-    def from_dict(cls, data: dict) -> 'Subject':
+    def from_dict(cls, data: Mapping[Any, Any]) -> 'Subject':
+        """
+        Cria uma instância de :class:`Subject` a partir de um dicionário.
+        Também são criadas instâncias de todos os objetos recursivamente.
+
+        Parameters
+        ----------
+        data: Mapping[Any, Any]
+            Dicionário contendo os dados da matéria.
+
+        Returns
+        -------
+        :class:`Subject`
+            Instância da matéria com todos os objetos internos criados.
+        """
         return cls(
             id=data['id'],
             name=data['name'],
@@ -85,7 +140,21 @@ class Course:
     subjects: List[Subject]
 
     @classmethod
-    def from_dict(cls, data: dict) -> 'Course':
+    def from_dict(cls, data: Mapping[Any, Any]) -> 'Course':
+        """
+        Cria uma instância de :class:`Course` a partir de um dicionário.
+        Também são criadas instâncias de todos os objetos recursivamente.
+
+        Parameters
+        ----------
+        data: Mapping[Any, Any]
+            Dicionário contendo os dados do curso.
+
+        Returns
+        -------
+        :class:`Course`
+            Instância do curso com todos os objetos internos criados.
+        """
         return cls(
             id=data['id'],
             name=data['name'],

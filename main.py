@@ -91,6 +91,19 @@ def set_user_course(user: User):
 
 
 def select_subject(user: User) -> 'Subject':
+    """
+    Pede para o usuário selecionar uma matéria do curso.
+
+    Parameters
+    ----------
+    user: :class:`User`
+        O usuário que está selecionando a matéria.
+
+    Returns
+    -------
+    :class:`Subject`
+        A matéria selecionada pelo usuário.
+    """
     assert user.course is not None  # Diminuir o tipo.
 
     texts = ['Selecione a disciplina desejada:', '']
@@ -119,6 +132,18 @@ def select_subject(user: User) -> 'Subject':
 
 
 def show_lesson(user: User, subject: 'Subject', lesson_id: str):
+    """
+    Mostra o conteúdo de uma aula para o usuário e atualiza seu progresso.
+
+    Parameters
+    ----------
+    user: :class:`User`
+        O usuário que está lendo a aula.
+    subject: :class:`Subject`
+        A matéria da qual a aula faz parte.
+    lesson_id: :class:`str`
+        O ID da aula que será exibida.
+    """
     lesson = next(i for i in subject.lessons if i.id == lesson_id)
 
     action = (
@@ -150,6 +175,17 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
 
 
 def show_all_lessons(user: User, subject: 'Subject'):
+    """
+    Mostra todas as aulas de uma matéria para o usuário, permitindo que ele
+    escolha uma para revisar ou fazer a prova.
+
+    Parameters
+    ----------
+    user: :class:`User`
+        O usuário que está revisando as aulas.
+    subject: :class:`Subject`
+        A matéria cujas aulas serão revisadas.
+    """
     texts = [
         'Você já assistiu todas as aulas desta matéria.',
         '',
@@ -176,7 +212,7 @@ def show_all_lessons(user: User, subject: 'Subject'):
             return
 
         if choice == test_index:
-            show_test(user, subject, 0)
+            show_test(user, subject, '')
         else:
             lesson = next(
                 lesson for lesson in subject.lessons if lesson.index == choice
@@ -184,7 +220,19 @@ def show_all_lessons(user: User, subject: 'Subject'):
             show_lesson(user, subject, lesson.id)
 
 
-def show_test(user: User, subject: 'Subject', _):
+def show_test(user: User, subject: 'Subject', lesson_id: str):
+    """
+    Exibe a prova de uma matéria para o usuário, coleta as respostas e calcula a nota.
+
+    Parameters
+    ----------
+    user: :class:`User`
+        O usuário que está fazendo a prova.
+    subject: :class:`Subject`
+        A matéria da qual a prova faz parte.
+    lesson_id: :class:`str`
+        Não é utilizado.
+    """
     test = subject.test
     print_menu(
         'Você finalizou todas as aulas.',
@@ -248,6 +296,18 @@ def show_test(user: User, subject: 'Subject', _):
 def start_revision(
     questions: Sequence['Question'], results: Mapping[int, Tuple['Choice', 'Choice']]
 ):
+    """
+    Inicia a revisão das questões respondidas pelo usuário, mostrando as respostas
+    corretas e incorretas.
+
+    Parameters
+    ----------
+    questions: Sequence[:class:`Question`]
+        As questões da prova que foram respondidas.
+    results: Mapping[:class:`int`, Tuple[:class:`Choice`, :class:`Choice`]]
+        Um dicionário que mapeia o índice da questão para uma tupla contendo a resposta
+        selecionada pelo usuário e a resposta correta.
+    """
     for question in questions:
         selected_answer = results[question.index][0]
         right_answer = results[question.index][1]
@@ -285,6 +345,21 @@ def start_revision(
 
 
 def show_question(question: 'Question', test: 'Test') -> str:
+    """
+    Exibe uma questão da prova e coleta a resposta do usuário.
+
+    Parameters
+    ----------
+    question: :class:`Question`
+        A questão a ser exibida.
+    test: :class:`Test`
+        A prova à qual a questão pertence.
+
+    Returns
+    -------
+    :class:`str`
+        A resposta escolhida pelo usuário.
+    """
     while True:
         print_menu(
             question.question,
