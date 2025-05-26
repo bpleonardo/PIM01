@@ -2,19 +2,19 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "/logins.json"
+        "**/logins.json"
       ],
       "url": "./json_schemas/logins.schema.json"
     },
     {
       "fileMatch": [
-        "/cursos.json"
+        "**/cursos.json"
       ],
       "url": "./json_schemas/cursos.schema.json"
     },
     {
       "fileMatch": [
-        "/usuarios.json"
+        "**/usuarios.json"
       ],
       "url": "./json_schemas/usuarios.schema.json"
     },

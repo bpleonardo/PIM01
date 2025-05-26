@@ -44,7 +44,7 @@ def set_user_course(user: User):
         O usuário que está selecionando o curso.
     """
     courses = tuple(
-        sorted(get_data_file('cursos.json').values(), key=lambda x: x['name'])
+        sorted(get_data_file('data/cursos.json').values(), key=lambda x: x['name'])
     )
 
     texts = [

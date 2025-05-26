@@ -60,7 +60,7 @@ class User:
         if self.course_id is None:
             return None
 
-        courses = get_data_file('cursos.json')
+        courses = get_data_file('data/cursos.json')
         course = courses[self.course_id]
 
         return Course.from_dict(course)
@@ -82,7 +82,7 @@ class User:
         :class:`None`
             Caso o usuário não seja encontrado.
         """
-        users = get_data_file('usuarios.json')
+        users = get_data_file('data/usuarios.json')
         user = users.get(username)
 
         if user is None:
@@ -91,7 +91,7 @@ class User:
         return cls(**user)
 
     def _set_password(self, new_password: str):
-        logins = get_data_file('logins.json')
+        logins = get_data_file('data/logins.json')
 
         logins[self.username] = hash_password(new_password)
 
@@ -111,7 +111,7 @@ class User:
         :class:`bool`
             Se a senha é igual à armazenada.
         """
-        logins = get_data_file('logins.json')
+        logins = get_data_file('data/logins.json')
         user_password = logins.get(self.username)
 
         if user_password is None:
@@ -126,7 +126,7 @@ class User:
         # Coleta os dados dinamicamente, removendo o prefixo '_'.
         data = {key.lstrip('_'): value for key, value in self.__dict__.items()}
 
-        users = get_data_file('usuarios.json')
+        users = get_data_file('data/usuarios.json')
         users[self.username] = data
 
         save_data_file('usuarios.json', users)
@@ -135,7 +135,7 @@ class User:
         """
         Atualiza essa instância do usuário a partir do disco.
         """
-        data = get_data_file('usuarios.json')
+        data = get_data_file('data/usuarios.json')
         for key, value in data[self.username].items():
             setattr(self, key, value)
 
