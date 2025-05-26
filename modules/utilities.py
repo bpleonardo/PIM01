@@ -1,5 +1,7 @@
 import shutil
-from typing import Union, Optional, Sequence
+from typing import Union, TypeVar, Callable, Iterable, Optional, Sequence
+
+T = TypeVar('T')
 
 # \ESC[2J = Limpa a tela, \033[3J = Apaga o histórico de rolagem, \ESC[H = Move o cursor para o início da tela.
 # REF:
@@ -67,3 +69,26 @@ def get_choice(
             return None
 
         return selected[0]
+
+
+def find(
+    sequence: Iterable[T], predicate: Callable[[T], bool], default: Optional[T] = None
+) -> Optional[T]:
+    """
+    Encontra o primeiro elemento da sequência que satisfaz a condição dada.
+
+    Parameters
+    ----------
+    sequence: Iterable[T]
+        A sequência a ser pesquisada.
+    predicate: Callable[[T], bool]
+        A função que define a condição a ser satisfeita.
+    default: Optional[T]
+        O valor a ser retornado se nenhum elemento satisfizer a condição. O padrão é `None`.
+
+    Returns
+    -------
+    Optional[T]
+        O primeiro elemento que satisfaz a condição, ou `default` se nenhum elemento satisfizer a condição.
+    """
+    return next((item for item in sequence if predicate(item)), default)

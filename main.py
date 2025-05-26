@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Tuple, Mapping, Sequence
 
 from modules.data import get_data_file
 from modules.users import User, login_account, create_account
-from modules.utilities import get_choice, print_menu
+from modules.utilities import find, get_choice, print_menu
 
 if TYPE_CHECKING:
     from modules.courses import Test, Choice, Subject, Question
@@ -144,7 +144,8 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
     lesson_id: :class:`str`
         O ID da aula que será exibida.
     """
-    lesson = next(i for i in subject.lessons if i.id == lesson_id)
+    lesson = find(subject.lessons, lambda x: x.id == lesson_id)
+    assert lesson is not None
 
     action = (
         'ir para próxima aula'
@@ -160,14 +161,10 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
     )
 
     if user.current_lesson.get(subject.id) != '-':
-        try:
-            user.current_lesson[subject.id] = next(
-                i for i in subject.lessons if i.index == lesson.index + 1
-            ).id
-        except StopIteration:
-            # Não temos mais aulas.
-            # A avaliação é a próxima.
-            user.current_lesson[subject.id] = subject.test.id
+        next_lesson = find(subject.lessons, lambda x: x.index == lesson.index + 1)
+        user.current_lesson[subject.id] = (
+            next_lesson.id if next_lesson else subject.test.id
+        )
 
         user.write()
 
@@ -369,9 +366,9 @@ def show_all_lessons(user: User, subject: 'Subject'):
         if choice == test_index:
             show_test(user, subject)
         else:
-            lesson = next(
-                lesson for lesson in subject.lessons if lesson.index == choice
-            )
+            lesson = find(subject.lessons, lambda le: le.index == choice)  # noqa: B023
+            assert lesson is not None
+
             show_lesson(user, subject, lesson.id)
 
 
@@ -425,3 +422,9 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         # Caso o usuário aperte Ctrl+C, o programa é encerrado sem erros.
         print_menu('Saindo...')
+    except Exception:  # noqa: BLE001
+        print_menu(
+            'Ocorreu um erro inesperado.',
+            'Por favor, entre em contato com o suporte.',
+            title='Erro',
+        )
