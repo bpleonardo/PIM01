@@ -137,4 +137,4 @@ _**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente
       "ADPLC001A"
       ```
 
-> Arquivo gerado com a ajuda de [jsonschema2md](https://github.com/sbrunner/jsonschema2md/tree/master).
+> Arquivo gerado com a ajuda de [jsonschema2md](https://github.com/sbrunner/jsonschema2md/).
