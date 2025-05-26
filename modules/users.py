@@ -95,7 +95,7 @@ class User:
 
         logins[self.username] = hash_password(new_password)
 
-        save_data_file('logins.json', logins)
+        save_data_file('data/logins.json', logins)
 
     def check_password(self, password: str) -> bool:
         """
@@ -129,7 +129,7 @@ class User:
         users = get_data_file('data/usuarios.json')
         users[self.username] = data
 
-        save_data_file('usuarios.json', users)
+        save_data_file('data/usuarios.json', users)
 
     def update(self):
         """
