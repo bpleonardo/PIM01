@@ -1,11 +1,15 @@
-from typing import List, Literal, Mapping, TypeAlias
+from typing import TYPE_CHECKING, List, Literal, Mapping
 from dataclasses import dataclass
 
-Choice: TypeAlias = Literal['a', 'b', 'c', 'd', 'e']
+if TYPE_CHECKING:
+    from typing import TypeAlias
+
+Choice: 'TypeAlias' = Literal['a', 'b', 'c', 'd', 'e']
 
 
-@dataclass(slots=True)
+@dataclass
 class Question:
+    __slots__ = ('answer', 'index', 'options', 'question', 'weight')
     index: int
     weight: int
     question: str
@@ -17,8 +21,9 @@ class Question:
         return cls(**data)
 
 
-@dataclass(slots=True)
+@dataclass
 class Test:
+    __slots__ = ('id', 'questions')
     id: str
     questions: List[Question]
 
@@ -33,8 +38,9 @@ class Test:
         )
 
 
-@dataclass(slots=True)
+@dataclass
 class Lesson:
+    __slots__ = ('content', 'id', 'title')
     id: str
     title: str
     content: str
@@ -48,8 +54,9 @@ class Lesson:
         return cls(**data)
 
 
-@dataclass(slots=True)
+@dataclass
 class Subject:
+    __slots__ = ('assessment', 'id', 'lessons', 'max_grade', 'name')
     id: str
     name: str
     max_grade: int
@@ -70,8 +77,9 @@ class Subject:
         )
 
 
-@dataclass(slots=True)
+@dataclass
 class Course:
+    __slots__ = ('id', 'name', 'subjects')
     id: str
     name: str
     subjects: List[Subject]
