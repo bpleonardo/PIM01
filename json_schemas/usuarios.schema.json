@@ -63,11 +63,11 @@
         },
         "current_lesson": {
           "type": "object",
-          "description": "As aulas ou provas que o aluno está fazendo atualmente.",
+          "description": "As aulas ou avaliações que o aluno está fazendo atualmente.",
           "patternProperties": {
             "^[A-Z]{5}$": {
               "type": "string",
-              "description": "A chave é o ID da disciplina e o valor é o id da aula ou prova. Caso o aluno já tenha terminado todas as aulas e provas, o valor será \"-\".",
+              "description": "A chave é o ID da disciplina e o valor é o id da aula ou avaliação. Caso o aluno já tenha terminado todas as aulas e avaliações, o valor será \"-\".",
               "pattern": "^(([A-Z]{5}[0-9]{3}(A|L))|-)$",
               "examples": [
                 "ADPLC002L",

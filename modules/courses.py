@@ -49,12 +49,12 @@ class Test:
         Parameters
         ----------
         data: Mapping[Any, Any]
-            Dicionário contendo os dados da prova.
+            Dicionário contendo os dados da avaliação.
 
         Returns
         -------
         :class:`Test`
-            Instância da prova com todos os objetos internos criados.
+            Instância da avaliação com todos os objetos internos criados.
         """
         return cls(
             id=data['id'],

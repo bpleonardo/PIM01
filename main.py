@@ -166,7 +166,7 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
             ).id
         except StopIteration:
             # Não temos mais aulas.
-            # A prova é a próxima.
+            # A avaliação é a próxima.
             user.current_lesson[subject.id] = subject.test.id
 
         user.write()
@@ -177,7 +177,7 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
 def show_all_lessons(user: User, subject: 'Subject'):
     """
     Mostra todas as aulas de uma matéria para o usuário, permitindo que ele
-    escolha uma para revisar ou fazer a prova.
+    escolha uma para revisar ou fazer a avaliação.
 
     Parameters
     ----------
@@ -222,14 +222,14 @@ def show_all_lessons(user: User, subject: 'Subject'):
 
 def show_test(user: User, subject: 'Subject', lesson_id: str):
     """
-    Exibe a prova de uma matéria para o usuário, coleta as respostas e calcula a nota.
+    Exibe a avaliação de uma matéria para o usuário, coleta as respostas e calcula a nota.
 
     Parameters
     ----------
     user: :class:`User`
-        O usuário que está fazendo a prova.
+        O usuário que está fazendo a avaliação.
     subject: :class:`Subject`
-        A matéria da qual a prova faz parte.
+        A matéria da qual a avaliação faz parte.
     lesson_id: :class:`str`
         Não é utilizado.
     """
@@ -237,7 +237,7 @@ def show_test(user: User, subject: 'Subject', lesson_id: str):
     print_menu(
         'Você finalizou todas as aulas.',
         '',
-        'Aperte Enter para começar a prova.',
+        'Aperte Enter para começar a avaliação.',
         title=subject.name,
     )
 
@@ -303,7 +303,7 @@ def start_revision(
     Parameters
     ----------
     questions: Sequence[:class:`Question`]
-        As questões da prova que foram respondidas.
+        As questões da avaliação que foram respondidas.
     results: Mapping[:class:`int`, Tuple[:class:`Choice`, :class:`Choice`]]
         Um dicionário que mapeia o índice da questão para uma tupla contendo a resposta
         selecionada pelo usuário e a resposta correta.
@@ -346,14 +346,14 @@ def start_revision(
 
 def show_question(question: 'Question', test: 'Test') -> str:
     """
-    Exibe uma questão da prova e coleta a resposta do usuário.
+    Exibe uma questão da avaliação e coleta a resposta do usuário.
 
     Parameters
     ----------
     question: :class:`Question`
         A questão a ser exibida.
     test: :class:`Test`
-        A prova à qual a questão pertence.
+        A avaliação à qual a questão pertence.
 
     Returns
     -------

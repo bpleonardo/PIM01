@@ -126,9 +126,9 @@ _**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente
 
   - **`grades`** _(objeto, obrigatório)_: As notas do aluno nas disciplinas.
     - **`^[A-Z]{5}$`** _(número)_: A chave é o ID da disciplina e o valor é a nota do aluno na disciplina em forma de porcentagem. Mínimo: `0`. Máximo: `100`.
-  - **`current_lesson`** _(objeto, obrigatório)_: As aulas ou provas que o aluno está fazendo atualmente.
+  - **`current_lesson`** _(objeto, obrigatório)_: As aulas ou avaliações que o aluno está fazendo atualmente.
 
-    - **`^[A-Z]{5}$`** _(string)_: A chave é o ID da disciplina e o valor é o id da aula ou prova. Caso o aluno já tenha terminado todas as aulas e provas, o valor será `"-"`. Deve seguir a expressão regular: `^(([A-Z]{5}[0-9]{3}(A|L))|-)$`.
+    - **`^[A-Z]{5}$`** _(string)_: A chave é o ID da disciplina e o valor é o id da aula ou avaliação. Caso o aluno já tenha terminado todas as aulas e avaliações, o valor será `"-"`. Deve seguir a expressão regular: `^(([A-Z]{5}[0-9]{3}(A|L))|-)$`.
 
       Exemplos:
 
