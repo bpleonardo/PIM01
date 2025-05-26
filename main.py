@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Tuple, Mapping, Sequence
 from modules.data import get_data_file
 from modules.users import User, login_account, create_account
 from modules.utilities import find, get_choice, print_menu
+from modules.exceptions import Exit
 
 if TYPE_CHECKING:
     from modules.courses import Test, Choice, Subject, Question
@@ -29,16 +30,9 @@ def create_or_login_user():
         if choice == 'c':
             return create_account()
         if choice == 's':
-            # Precisamos utilizar RuntimeError pois KeyboardInterrupt está sendo capturado
-            # para implementação do voltar no menu de cadastro e login.
-            # O valor 115 é um código arbitrário para verificação.
-            raise RuntimeError(0x115)
+            raise Exit()
     except KeyboardInterrupt:
         return None
-    except RuntimeError as e:
-        if e.args[0] == 0x115:
-            raise KeyboardInterrupt() from None
-        raise  # Devevolver o erro original se não for o caso de voltar.
 
 
 def set_user_course(user: User):
@@ -134,7 +128,7 @@ def select_subject(user: User) -> 'Subject':
         choice = int(choice)
 
         if choice == 0:
-            raise KeyboardInterrupt()
+            raise Exit()
 
         selected_subject = subjects[choice - 1]
 
@@ -433,7 +427,7 @@ def main():
 if __name__ == '__main__':
     try:
         main()
-    except KeyboardInterrupt:
+    except (Exit, KeyboardInterrupt):
         # Caso o usuário aperte Ctrl+C, o programa é encerrado sem erros.
         print_menu('Saindo...')
     except Exception:  # noqa: BLE001
