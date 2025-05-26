@@ -91,7 +91,7 @@ def set_user_course(user: User):
 
 
 def select_subject(user: User) -> 'Subject':
-    assert user.course is not None  # FIXME: Remover em produção.
+    assert user.course is not None  # Diminuir o tipo.
 
     texts = ['Selecione a disciplina desejada:', '']
 
@@ -321,7 +321,7 @@ def main():
     if user.course_id is None:
         set_user_course(user)
 
-    assert user.course is not None  # FIXME: Remover em produção.
+    assert user.course is not None  # Diminuir o tipo.
 
     print_menu('Você está matriculado no curso', user.course.name, title='Entrada')
     time.sleep(1)
