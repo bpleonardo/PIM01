@@ -29,11 +29,16 @@ def create_or_login_user():
         if choice == 'c':
             return create_account()
         if choice == 's':
-            raise KeyboardInterrupt()
+            # Precisamos utilizar RuntimeError pois KeyboardInterrupt está sendo capturado
+            # para implementação do voltar no menu de cadastro e login.
+            # O valor 115 é um código arbitrário para verificação.
+            raise RuntimeError(0x115)
     except KeyboardInterrupt:
         return None
-
-    raise RuntimeError('Você não deveria ver isso...')
+    except RuntimeError as e:
+        if e.args[0] == 0x115:
+            raise KeyboardInterrupt() from None
+        raise  # Devevolver o erro original se não for o caso de voltar.
 
 
 def set_user_course(user: User):
