@@ -334,7 +334,7 @@ def main():
             current_lesson = user.current_lesson.get(subject.id)
             if current_lesson is None:
                 current_lesson = subject.lessons[0].id
-            elif current_lesson[-1] == 'L':
+            if current_lesson[-1] == 'L':
                 show_lesson(user, subject, current_lesson)
             elif current_lesson[-1] in ('-', 'A'):
                 break
