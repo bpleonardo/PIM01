@@ -345,8 +345,8 @@ def main():
 
 
 if __name__ == '__main__':
-    try:  # noqa: SIM105
+    try:
         main()
     except KeyboardInterrupt:
         # Caso o usuário aperte Ctrl+C, o programa é encerrado sem erros.
-        pass
+        print_menu('Saindo...')
