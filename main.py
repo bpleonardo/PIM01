@@ -21,13 +21,15 @@ def create_or_login_user():
         Caso o usuário interrompa o processo de cadastro ou login.
     """
 
-    choice = get_choice(['c', 'l'], '> ', 'l')
+    choice = get_choice(['c', 'l', 's'], '> ', 'l')
 
     try:
         if choice == 'l':
             return login_account()
         if choice == 'c':
             return create_account()
+        if choice == 's':
+            raise KeyboardInterrupt()
     except KeyboardInterrupt:
         return None
 
@@ -113,16 +115,21 @@ def select_subject(user: User) -> 'Subject':
     for i, subject in enumerate(subjects):
         texts.append(f'[{i + 1}] {subject.name}')
 
+    texts.append('[0] Sair do programa.')
+
     while True:
         print_menu(*texts, title='Seleção de matéria')
 
-        choice = get_choice([str(i) for i in range(1, len(subjects) + 1)], '> ')
+        choice = get_choice([str(i) for i in range(len(subjects) + 1)], '> ')
         if choice is None:
             print('Opção inválida.')
             time.sleep(0.5)
             continue
 
         choice = int(choice)
+
+        if choice == 0:
+            raise KeyboardInterrupt()
 
         selected_subject = subjects[choice - 1]
 
@@ -157,6 +164,7 @@ def show_lesson(user: User, subject: 'Subject', lesson_id: str):
         lesson.content,
         '',
         f'Pressione Enter para {action}.',
+        'Pressione Ctrl+C para sair do programa.',
         title=lesson.title,
     )
 
@@ -382,6 +390,7 @@ def main():
             'Selecione uma opção:',
             '[c]adastro',
             '[L]ogin',
+            '[s]air',
             title='Entrada',
         )
 
