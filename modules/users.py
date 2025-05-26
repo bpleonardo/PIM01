@@ -1,3 +1,4 @@
+import re
 import sys
 import time
 from typing import Optional, MutableMapping
@@ -8,6 +9,9 @@ from .data import get_data_file, save_data_file
 from .courses import Course
 from .passwords import hash_password, check_password
 from .utilities import get_choice, print_menu
+
+USER_REGEX = re.compile(r'^(?=[\w\-.]+$)[^-_.].*[^-_.]$')
+NAME_REGEX = re.compile(r'^[A-Za-zÀ-ž ]{3,}$')
 
 
 class User:
@@ -154,8 +158,9 @@ def create_account() -> User:  # noqa: C901
 
     while True:
         full_name = input('Seu nome completo > ').strip().title()
-        if full_name != '':
+        if NAME_REGEX.match(full_name):
             break
+        print('Nome inválido. Deve conter pelo menos 3 letras.\n')
 
     while True:
         gender = get_choice(
@@ -170,7 +175,7 @@ def create_account() -> User:  # noqa: C901
         gender = None
 
     while True:
-        age = input('Sua idade > ')
+        age = input('Sua idade > ').strip()
         if not age.isdigit():
             print('Idade inválida.\n')
             continue
@@ -184,11 +189,18 @@ def create_account() -> User:  # noqa: C901
 
     while True:
         city = input('Sua cidade > ').strip().title()
-        if city != '':
+        if NAME_REGEX.match(city):
             break
+        print('Cidade inválida. Deve conter pelo menos 3 letras.\n')
 
     while True:
-        username = input('Seu usuário > ')
+        username = input('Seu usuário > ').strip()
+
+        if not USER_REGEX.match(username):
+            print(
+                'Nome de usuário inválido. Deve conter apenas letras, números, hífens e sublinhados.\n'
+            )
+            continue
 
         if User.find(username) is not None:
             print('Usuário já existe.\n')
@@ -202,6 +214,10 @@ def create_account() -> User:  # noqa: C901
 
         if password != password2:
             print('As senhas não coincidem.\n')
+            continue
+
+        if len(password) == 0:
+            print('Por favor, digite uma senha.\n')
             continue
 
         break

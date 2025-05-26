@@ -3,7 +3,7 @@
   "title": "Usuários",
   "type": "object",
   "patternProperties": {
-    "^.+$": {
+    "^(?=[\\w\\-.]+$)[^-_.].*[^-_.]$": {
       "type": "object",
       "description": "A chave é o nome de usuário do aluno.",
       "properties": {
@@ -14,11 +14,15 @@
         },
         "username": {
           "type": "string",
-          "description": "O nome de usuário do aluno."
+          "description": "O nome de usuário do aluno.",
+          "pattern": "^(?=[\\w\\-.]+$)[^-_.].*[^-_.]$",
+          "minLength": 2
         },
         "full_name": {
           "type": "string",
-          "description": "O nome completo do aluno."
+          "description": "O nome completo do aluno.",
+          "pattern": "^[A-Za-zÀ-ž ]{3,}$",
+          "minLength": 3
         },
         "gender": {
           "type": [
@@ -34,7 +38,9 @@
         },
         "city": {
           "type": "string",
-          "description": "A cidade onde o aluno reside."
+          "description": "A cidade onde o aluno reside.",
+          "pattern": "^[A-Za-zÀ-ž ]{3,}$",
+          "minLength": 3
         },
         "course_id": {
           "type": [

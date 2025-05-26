@@ -95,7 +95,7 @@ _**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente
 
 ### Propriedades
 
-- **`^.+$`** _(string)_: A chave representa um nome de usuário cadastrado no sistema, e o valor é o hash da senha com o salt. Deve ter 81 caracteres. Deve seguir a expressão regular: `^[0-9a-fA-F]{64}g[0-9a-fA-F]{16}$`
+- **`^(?=[\w\-.]+$)[^-_.].*[^-_.]$`** _(string)_: A chave representa um nome de usuário cadastrado no sistema, e o valor é o hash da senha com o salt. Deve ter 81 caracteres. Deve seguir a expressão regular: `^[0-9a-fA-F]{64}g[0-9a-fA-F]{16}$`
 
 ## [usuarios.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/usuarios.schema.json)
 
@@ -105,13 +105,13 @@ _**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente
 
 ### Propriedades
 
-- **`^.+$`** _(objeto)_: A chave é o nome de usuário do aluno.
+- **`^(?=[\w\-.]+$)[^-_.].*[^-_.]$`** _(objeto)_: A chave é o nome de usuário do aluno.
 
   - **`age`** _(inteiro, obrigatório)_: A idade do aluno. Mínimo: `14`.
-  - **`username`** _(string, obrigatório)_: O nome de usuário do aluno.
-  - **`full_name`** _(string, obrigatório)_: O nome completo do aluno.
+  - **`username`** _(string, obrigatório)_: O nome de usuário do aluno. Deve seguir a expressão regular: `^(?=[\w\-.]+$)[^-_.].*[^-_.]$`.
+  - **`full_name`** _(string, obrigatório)_: O nome completo do aluno. Deve ter pelo menos 3 caracteres. Deve seguir a expressão regular: `^[A-Za-zÀ-ž ]{3,}$`. 
   - **`gender`** _(string ou null, obrigatório)_: O gênero do aluno. `null` caso não especificado. Deve ser um de `["h", "m", null]`.
-  - **`city`** _(string, obrigatório)_: A cidade onde o aluno reside.
+  - **`city`** _(string, obrigatório)_: A cidade onde o aluno reside. Deve ter pelo menos 3 caracteres. Deve seguir a expressão regular: `^[A-Za-zÀ-ž ]{3,}$`. 
   - **`course_id`** _(string ou null, obrigatório)_: O ID do curso em que o aluno está matriculado. `null` caso não esteja matriculado. Deve seguir a expressão regular: `^[A-Z]{3}$`.
 
     Exemplos:

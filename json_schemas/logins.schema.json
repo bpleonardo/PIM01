@@ -1,16 +1,16 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
-    "title": "Dados de login de usuários.",
-    "description": "Representa os dados de login dos usuários do sistema, incluindo o hash da senha e o salt.",
-    "type": "object",
-    "patternProperties": {
-        "^.+$": {
-            "type": "string",
-            "description": "A chave representa um nome de usuário cadastrado no sistema, e o valor é o hash da senha com o salt.",
-            "minLength": 81,
-            "maxLength": 81,
-            "pattern": "^[0-9a-fA-F]{64}g[0-9a-fA-F]{16}$"
-        }
-    },
-    "additionalProperties": false
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Dados de login de usuários.",
+  "description": "Representa os dados de login dos usuários do sistema, incluindo o hash da senha e o salt.",
+  "type": "object",
+  "patternProperties": {
+    "^(?=[\\w\\-.]+$)[^-_.].*[^-_.]$": {
+      "type": "string",
+      "description": "A chave representa um nome de usuário cadastrado no sistema, e o valor é o hash da senha com o salt.",
+      "minLength": 81,
+      "maxLength": 81,
+      "pattern": "^[0-9a-fA-F]{64}g[0-9a-fA-F]{16}$"
+    }
+  },
+  "additionalProperties": false
 }
