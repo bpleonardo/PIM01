@@ -119,25 +119,68 @@ def select_subject(user: User) -> str:
 
 def show_lesson(user: User, subject: 'Subject', lesson_id: str):
     lesson = next(i for i in subject.lessons if i.id == lesson_id)
+
+    action = (
+        'ir para próxima aula'
+        if user.current_lesson.get(subject.id) != '-'
+        else 'voltar'
+    )
+
     print_menu(
         lesson.content,
         '',
-        'Pressione Enter para ir para a próxima aula.',
+        f'Pressione Enter para {action}.',
         title=lesson.title,
     )
 
-    try:
-        user.current_lesson[subject.id] = next(
-            i for i in subject.lessons if i.index == lesson.index + 1
-        ).id
-    except StopIteration:
-        # Não temos mais aulas.
-        # A prova é a próxima.
-        user.current_lesson[subject.id] = subject.assessment.id
+    if user.current_lesson.get(subject.id) != '-':
+        try:
+            user.current_lesson[subject.id] = next(
+                i for i in subject.lessons if i.index == lesson.index + 1
+            ).id
+        except StopIteration:
+            # Não temos mais aulas.
+            # A prova é a próxima.
+            user.current_lesson[subject.id] = subject.assessment.id
 
-    user.write()
+        user.write()
 
     input()
+
+
+def show_all_lessons(user: User, subject: 'Subject'):
+    texts = [
+        'Você já assistiu todas as aulas desta matéria.',
+        '',
+        'Selecione a aula que deseja revisar:',
+    ]
+
+    test_index = subject.lessons[-1].index + 1
+    exit_index = test_index + 1
+
+    texts.extend(f'[{lesson.index}] {lesson.title}' for lesson in subject.lessons)
+    texts.extend((f'[{test_index}] Prova', f'[{exit_index}] Voltar'))
+
+    while True:
+        print_menu(*texts, title=subject.name)
+        choice = get_choice(tuple(map(str, range(1, exit_index + 1))), '> ')
+        if choice is None:
+            print('Opção inválida.')
+            time.sleep(0.5)
+            continue
+
+        choice = int(choice)
+
+        if choice == exit_index:
+            return
+
+        if choice == test_index:
+            show_assessment(user, subject, 0)
+        else:
+            lesson = next(
+                lesson for lesson in subject.lessons if lesson.index == choice
+            )
+            show_lesson(user, subject, lesson.id)
 
 
 def show_assessment(user: User, subject: 'Subject', _):
@@ -166,9 +209,10 @@ def show_assessment(user: User, subject: 'Subject', _):
         / 100,
         5,
     )
-    user.grades[subject.id] = grade * 100
-    user.current_lesson[subject.id] = '-'
-    user.write()
+    if user.grades.get(subject.id) is None:
+        user.grades[subject.id] = grade * 100
+        user.current_lesson[subject.id] = '-'
+        user.write()
 
     grade = round(grade * subject.max_grade, 1)
 
@@ -184,9 +228,16 @@ def show_assessment(user: User, subject: 'Subject', _):
 
     start_revision(assessment.questions, results)
 
+    action = (
+        'escolher outra matéria'
+        if user.current_lesson.get(subject.id) != '-'
+        else 'voltar'
+    )
+
     print_menu(
         'Prova revisada.',
-        'Aperte Enter para selecionar outra matéria.',
+        '',
+        f'Aperte Enter para {action}.',
         title=subject.name,
     )
 
@@ -284,12 +335,15 @@ def main():
             current_lesson = user.current_lesson.get(subject.id)
             if current_lesson is None:
                 current_lesson = subject.lessons[0].id
-            if current_lesson[-1] == 'L':
+            elif current_lesson[-1] == 'L':
                 show_lesson(user, subject, current_lesson)
-            elif current_lesson[-1] == 'A':
+            elif current_lesson[-1] in ('-', 'A'):
                 break
 
-        show_assessment(user, subject, current_lesson)
+        if current_lesson[-1] == '-':
+            show_all_lessons(user, subject)
+        if current_lesson[-1] == 'A':
+            show_assessment(user, subject, current_lesson)
 
 
 if __name__ == '__main__':
