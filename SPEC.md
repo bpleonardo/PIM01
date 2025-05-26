@@ -89,6 +89,7 @@ _**Este arquivo deve estar presente para a execução do programa.**_
 ## [logins.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/logins.schema.json)
 
 _Representa os dados de login dos usuários do sistema, incluindo o hash da senha e o salt._
+_**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente.**_
 
 ### Propriedades
 
@@ -97,6 +98,7 @@ _Representa os dados de login dos usuários do sistema, incluindo o hash da senh
 ## [usuarios.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/usuarios.schema.json)
 
 _Representa os dados dos usuários do sistema, incluindo informações pessoais, notas e aulas atuais._
+_**Este arquivo é gerenciado pelo programa e você NÃO deve editar diretamente.**_
 
 ### Propriedades
 
