@@ -1,6 +1,6 @@
 # Especificações dos arquivos de dados.
 
-## cursos.json
+## [cursos.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/cursos.schema.json)
 
 _Representa os cursos e suas respectivas disciplinas, aulas e avaliações._
 _**Este arquivo deve estar presente para a execução do programa.**_
@@ -86,7 +86,7 @@ _**Este arquivo deve estar presente para a execução do programa.**_
               - **`e`** _(string, obrigatório)_: Opção E da questão.
             - **`answer`** _(string, obrigatório)_: A resposta correta da questão. Deve ser um de `["a", "b", "c", "d", "e"]`.
 
-## logins.json
+## [logins.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/logins.schema.json)
 
 _Representa os dados de login dos usuários do sistema, incluindo o hash da senha e o salt._
 
@@ -94,7 +94,7 @@ _Representa os dados de login dos usuários do sistema, incluindo o hash da senh
 
 - **`^.+$`** _(string)_: A chave representa um nome de usuário cadastrado no sistema, e o valor é o hash da senha com o salt. Deve ter 81 caracteres. Deve seguir a expressão regular: `^[0-9a-fA-F]{64}g[0-9a-fA-F]{16}$`
 
-## usuarios.json
+## [usuarios.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/usuarios.schema.json)
 
 _Representa os dados dos usuários do sistema, incluindo informações pessoais, notas e aulas atuais._
 
