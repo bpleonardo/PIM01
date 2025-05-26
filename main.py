@@ -212,7 +212,7 @@ def show_all_lessons(user: User, subject: 'Subject'):
             return
 
         if choice == test_index:
-            show_test(user, subject, '')
+            show_test(user, subject)
         else:
             lesson = next(
                 lesson for lesson in subject.lessons if lesson.index == choice
@@ -220,7 +220,7 @@ def show_all_lessons(user: User, subject: 'Subject'):
             show_lesson(user, subject, lesson.id)
 
 
-def show_test(user: User, subject: 'Subject', lesson_id: str):
+def show_test(user: User, subject: 'Subject'):
     """
     Exibe a avaliação de uma matéria para o usuário, coleta as respostas e calcula a nota.
 
@@ -416,7 +416,7 @@ def main():
         if current_lesson[-1] == '-':
             show_all_lessons(user, subject)
         if current_lesson[-1] == 'A':
-            show_test(user, subject, current_lesson)
+            show_test(user, subject)
 
 
 if __name__ == '__main__':
