@@ -331,9 +331,7 @@ def main():
         while True:
             user.update()
 
-            current_lesson = user.current_lesson.get(subject.id)
-            if current_lesson is None:
-                current_lesson = subject.lessons[0].id
+            current_lesson = user.current_lesson.get(subject.id, subject.lessons[0].id)
             if current_lesson[-1] == 'L':
                 show_lesson(user, subject, current_lesson)
             elif current_lesson[-1] in ('-', 'A'):
