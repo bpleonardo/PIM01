@@ -352,14 +352,13 @@ def show_all_lessons(user: User, subject: 'Subject'):
     ]
 
     test_index = subject.lessons[-1].index + 1
-    exit_index = test_index + 1
 
     texts.extend(f'[{lesson.index}] {lesson.title}' for lesson in subject.lessons)
-    texts.extend((f'[{test_index}] Prova', f'[{exit_index}] Voltar'))
+    texts.extend((f'[{test_index}] Prova', '[0] Voltar'))
 
     while True:
         print_menu(*texts, title=subject.name)
-        choice = get_choice(tuple(map(str, range(1, exit_index + 1))), '> ')
+        choice = get_choice(tuple(map(str, range(test_index + 1))), '> ')
         if choice is None:
             print('Opção inválida.')
             time.sleep(0.5)
@@ -367,7 +366,7 @@ def show_all_lessons(user: User, subject: 'Subject'):
 
         choice = int(choice)
 
-        if choice == exit_index:
+        if choice == 0:
             return
 
         if choice == test_index:
