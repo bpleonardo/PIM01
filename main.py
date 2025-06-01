@@ -380,6 +380,9 @@ def show_all_lessons(user: User, subject: 'Subject'):
 
 
 def main():
+    # Define o título do terminal.
+    print('\033]2;PIM - Plataforma Integrada de Mentoria\a')
+
     user = None
     while user is None:
         print_menu(
@@ -425,6 +428,12 @@ def main():
 
 
 if __name__ == '__main__':
+    import ctypes
+
+    kernel32 = ctypes.windll.kernel32
+    # Habilita suporte ao ANSI no console do Windows.
+    kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+
     try:
         main()
     except (Exit, KeyboardInterrupt):
@@ -436,3 +445,4 @@ if __name__ == '__main__':
             'Por favor, entre em contato com o suporte.',
             title='Erro',
         )
+        input()

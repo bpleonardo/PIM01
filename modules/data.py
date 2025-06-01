@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 from typing import Any
 
@@ -17,6 +18,9 @@ def get_data_file(path: str) -> Any:
     :class:`typing.Any`
         O conteúdo do arquivo JSON.
     """
+    # Verifica se executando dentro do PyInstaller e ajusta o caminho.
+    path = f'{sys._MEIPASS}/{path}' if hasattr(sys, '_MEIPASS') else path  # type: ignore
+
     if not os.path.exists(path):
         return {}
 
@@ -35,5 +39,8 @@ def save_data_file(path: str, data: Any):
     data: :class:`typing.Any`
         Dados a serem salvos no arquivo JSON.
     """
+    # Verifica se executando dentro do PyInstaller e ajusta o caminho.
+    path = f'{sys._MEIPASS}/{path}' if hasattr(sys, '_MEIPASS') else path  # type: ignore
+
     with open(path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=2)

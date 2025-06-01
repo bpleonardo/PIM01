@@ -1,0 +1,1 @@
+pyinstaller main.py --optimize 2 --add-data data:data

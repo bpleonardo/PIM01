@@ -1,5 +1,7 @@
 # Especificações dos arquivos de dados.
 
+Esses arquivos são encontrados na pasta `data` dentro da pasta do programa (`_internal`).
+
 ## [cursos.json](https://github.com/bpleonardo/PIM01/blob/main/json_schemas/cursos.schema.json)
 
 _Representa os cursos e suas respectivas disciplinas, aulas e avaliações._
