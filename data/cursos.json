@@ -172,54 +172,171 @@
       }
     ]
   },
-  "EDF": {
-    "id": "EDF",
-    "name": "Educação Física",
+  "DIR": {
+    "id": "DIR",
+    "name": "Direito",
     "subjects": [
       {
-        "id": "EDBIE",
-        "name": "Biomecânica e Exercício",
+        "id": "DIIDC",
+        "name": "Introdução ao Direito Constitucional",
         "max_grade": 10,
         "lessons": [
           {
-            "id": "EDBIE001L",
-            "title": "Introdução à Biomecânica",
-            "content": "Estudo dos movimentos do corpo humano e as forças que agem sobre ele durante a prática de atividades físicas."
+            "id": "DIIDC001L",
+            "title": "Conceitos Iniciais de Direito",
+            "content": "A aula aborda o conceito de Direito, suas funções sociais e os diferentes ramos jurídicos existentes na sociedade moderna."
           },
           {
-            "id": "EDBIE002L",
-            "title": "Cadeias Musculares",
-            "content": "Compreensão da função e interação entre músculos durante o movimento corporal."
+            "id": "DIIDC002L",
+            "title": "Constituição: Noções Gerais",
+            "content": "Entenda o que é uma Constituição, sua importância para o Estado e como ela organiza os poderes e direitos fundamentais."
           },
           {
-            "id": "EDBIE003L",
-            "title": "Análise de Movimento",
-            "content": "Técnicas para avaliar e melhorar a eficiência dos movimentos corporais."
+            "id": "DIIDC003L",
+            "title": "Poderes da República",
+            "content": "Estudo dos poderes Executivo, Legislativo e Judiciário, suas funções, competências e equilíbrio entre si."
           },
           {
-            "id": "EDBIE004L",
-            "title": "Lesões e Prevenção",
-            "content": "Identificação de causas de lesões comuns e estratégias para evitá-las."
+            "id": "DIIDC004L",
+            "title": "Direitos e Garantias Fundamentais",
+            "content": "Apresenta os principais direitos fundamentais assegurados na Constituição Federal e sua aplicação prática."
           },
           {
-            "id": "EDBIE005L",
-            "title": "Aplicação da Biomecânica no Esporte",
-            "content": "Como aplicar os conceitos biomecânicos para melhorar o desempenho esportivo."
+            "id": "DIIDC005L",
+            "title": "Controle de Constitucionalidade",
+            "content": "Explora os mecanismos de controle das leis perante a Constituição, como ações diretas e arguição de descumprimento."
           }
         ],
         "test": {
-          "id": "EDBIE001A",
+          "id": "DIIDC001A",
           "questions": [
             {
               "index": 0,
-              "weight": 100,
-              "question": "O que estuda a biomecânica?",
+              "weight": 10,
+              "question": "O que é uma Constituição?",
               "options": {
-                "a": "A mente humana.",
-                "b": "O metabolismo celular.",
-                "c": "Os movimentos e forças sobre o corpo.",
-                "d": "A anatomia dos músculos.",
-                "e": "O sistema digestivo."
+                "a": "Um conjunto de normas infralegais.",
+                "b": "Um código de conduta empresarial.",
+                "c": "A lei fundamental que organiza o Estado.",
+                "d": "Um tratado internacional.",
+                "e": "Uma portaria do presidente."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 1,
+              "weight": 10,
+              "question": "Qual poder é responsável por criar leis?",
+              "options": {
+                "a": "Executivo",
+                "b": "Judiciário",
+                "c": "Legislativo",
+                "d": "Militar",
+                "e": "Tribunal de Contas"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 2,
+              "weight": 10,
+              "question": "O controle de constitucionalidade visa:",
+              "options": {
+                "a": "Criar novas leis.",
+                "b": "Analisar a constitucionalidade das normas.",
+                "c": "Executar políticas públicas.",
+                "d": "Arbitrar conflitos civis.",
+                "e": "Julgar processos criminais."
+              },
+              "answer": "b"
+            },
+            {
+              "index": 3,
+              "weight": 10,
+              "question": "Qual desses é um direito fundamental?",
+              "options": {
+                "a": "Ter carro próprio.",
+                "b": "Acesso ao lazer pago.",
+                "c": "Liberdade de expressão.",
+                "d": "Obrigações trabalhistas.",
+                "e": "Liberdade empresarial."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 4,
+              "weight": 10,
+              "question": "Quem exerce o poder Judiciário?",
+              "options": {
+                "a": "Senadores",
+                "b": "Presidentes",
+                "c": "Ministros de Estado",
+                "d": "Juízes e tribunais",
+                "e": "Governadores"
+              },
+              "answer": "d"
+            },
+            {
+              "index": 5,
+              "weight": 10,
+              "question": "A Constituição brasileira atual foi promulgada em:",
+              "options": {
+                "a": "1985",
+                "b": "1990",
+                "c": "1988",
+                "d": "2001",
+                "e": "1964"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 6,
+              "weight": 10,
+              "question": "A divisão dos Poderes busca:",
+              "options": {
+                "a": "Aumentar o poder do Judiciário.",
+                "b": "Concentrar o poder no Executivo.",
+                "c": "Equilibrar as funções do Estado.",
+                "d": "Criar leis mais rapidamente.",
+                "e": "Eliminar a burocracia."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 7,
+              "weight": 10,
+              "question": "O que significa 'supremacia constitucional'?",
+              "options": {
+                "a": "As leis devem seguir a Constituição.",
+                "b": "A Constituição pode ser ignorada.",
+                "c": "O Judiciário é o poder supremo.",
+                "d": "Os decretos têm valor superior à Constituição.",
+                "e": "A Constituição é inferior aos tratados internacionais."
+              },
+              "answer": "a"
+            },
+            {
+              "index": 8,
+              "weight": 10,
+              "question": "Qual é o principal documento normativo de um Estado democrático?",
+              "options": {
+                "a": "Código Penal",
+                "b": "Regimento Interno",
+                "c": "Constituição",
+                "d": "Lei Orgânica",
+                "e": "Decreto Executivo"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 9,
+              "weight": 10,
+              "question": "Quem garante os direitos fundamentais?",
+              "options": {
+                "a": "Somente o Legislativo",
+                "b": "A iniciativa privada",
+                "c": "A Constituição e os órgãos estatais",
+                "d": "As universidades",
+                "e": "A mídia"
               },
               "answer": "c"
             }
@@ -228,56 +345,519 @@
       }
     ]
   },
-  "ADM": {
-    "id": "ADM",
-    "name": "Administração",
+  "EGC": {
+    "id": "EGC",
+    "name": "Engenharia Civil",
     "subjects": [
       {
-        "id": "AMESP",
-        "name": "Empreendedorismo e Startups",
+        "id": "ECMEP",
+        "name": "Mecânica dos Materiais",
         "max_grade": 10,
         "lessons": [
           {
-            "id": "AMESP001L",
-            "title": "O que é Empreender?",
-            "content": "Nesta aula veremos o conceito de empreendedorismo, suas origens e importância no cenário econômico."
+            "id": "ECMEP001L",
+            "title": "Introdução à Mecânica dos Materiais",
+            "content": "A aula apresenta os conceitos fundamentais da resistência dos materiais, incluindo tensão e deformação."
           },
           {
-            "id": "AMESP002L",
-            "title": "Modelos de Negócio",
-            "content": "Compreenda os diferentes tipos de modelos de negócios e como estruturá-los."
+            "id": "ECMEP002L",
+            "title": "Esforços Internos",
+            "content": "Discute os esforços de tração, compressão, flexão, torção e cisalhamento em estruturas."
           },
           {
-            "id": "AMESP003L",
-            "title": "Validação de Ideia",
-            "content": "Como testar sua ideia antes de investir recursos valiosos nela."
+            "id": "ECMEP003L",
+            "title": "Diagrama Carga x Deformação",
+            "content": "Estuda o comportamento dos materiais sob carga, limites elástico e de ruptura."
           },
           {
-            "id": "AMESP004L",
-            "title": "Pitch de Negócio",
-            "content": "Aprenda como apresentar sua ideia de forma clara e objetiva para investidores."
+            "id": "ECMEP004L",
+            "title": "Lei de Hooke",
+            "content": "Explica a relação entre tensão e deformação em materiais elásticos."
           },
           {
-            "id": "AMESP005L",
-            "title": "Crescimento e Escalabilidade",
-            "content": "Como planejar e executar a expansão de uma startup."
+            "id": "ECMEP005L",
+            "title": "Análise de Tensões em Vigas",
+            "content": "Explora os cálculos de tensões normais e cisalhantes em seções transversais."
           }
         ],
         "test": {
-          "id": "AMESP001A",
+          "id": "ECMEP001A",
           "questions": [
             {
               "index": 0,
-              "weight": 100,
-              "question": "O que caracteriza um empreendedor?",
+              "weight": 10,
+              "question": "Qual grandeza representa a força aplicada por unidade de área?",
               "options": {
-                "a": "Alguém que segue ordens.",
-                "b": "Alguém que busca estabilidade.",
-                "c": "Alguém que cria soluções e assume riscos.",
-                "d": "Alguém que prefere empregos públicos.",
-                "e": "Alguém que evita inovações."
+                "a": "Velocidade",
+                "b": "Pressão",
+                "c": "Tensão",
+                "d": "Deformação",
+                "e": "Carga"
               },
               "answer": "c"
+            },
+            {
+              "index": 1,
+              "weight": 10,
+              "question": "A Lei de Hooke relaciona:",
+              "options": {
+                "a": "Massa e gravidade.",
+                "b": "Carga e resistência.",
+                "c": "Tensão e deformação.",
+                "d": "Peso e volume.",
+                "e": "Área e comprimento."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 2,
+              "weight": 10,
+              "question": "O que é um esforço de cisalhamento?",
+              "options": {
+                "a": "Compressão axial.",
+                "b": "Força paralela à superfície.",
+                "c": "Carga pontual vertical.",
+                "d": "Tração centrada.",
+                "e": "Empuxo."
+              },
+              "answer": "b"
+            },
+            {
+              "index": 3,
+              "weight": 10,
+              "question": "A resistência dos materiais é importante para:",
+              "options": {
+                "a": "Calcular áreas de terrenos.",
+                "b": "Analisar custos.",
+                "c": "Dimensionar elementos estruturais.",
+                "d": "Organizar cronogramas.",
+                "e": "Desenhar plantas baixas."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 4,
+              "weight": 10,
+              "question": "O limite elástico é:",
+              "options": {
+                "a": "A tensão máxima antes da deformação permanente.",
+                "b": "A carga total aplicada.",
+                "c": "O diâmetro da peça.",
+                "d": "A velocidade de aplicação da carga.",
+                "e": "O volume da estrutura."
+              },
+              "answer": "a"
+            },
+            {
+              "index": 5,
+              "weight": 10,
+              "question": "Uma viga submetida à flexão sofre:",
+              "options": {
+                "a": "Somente cisalhamento.",
+                "b": "Compressão uniforme.",
+                "c": "Momento fletor.",
+                "d": "Empuxo hidráulico.",
+                "e": "Reações horizontais."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 6,
+              "weight": 10,
+              "question": "O que é deformação?",
+              "options": {
+                "a": "Massa da estrutura.",
+                "b": "Quantidade de movimento.",
+                "c": "Mudança no comprimento original.",
+                "d": "Força total aplicada.",
+                "e": "Área da seção transversal."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 7,
+              "weight": 10,
+              "question": "Qual propriedade mede a rigidez de um material?",
+              "options": {
+                "a": "Densidade",
+                "b": "Condutividade",
+                "c": "Módulo de elasticidade",
+                "d": "Coeficiente de atrito",
+                "e": "Resistência térmica"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 8,
+              "weight": 10,
+              "question": "Torção ocorre quando:",
+              "options": {
+                "a": "A peça é comprimida.",
+                "b": "O material gira em torno do seu eixo.",
+                "c": "A temperatura é elevada.",
+                "d": "A umidade aumenta.",
+                "e": "Há atrito com o solo."
+              },
+              "answer": "b"
+            },
+            {
+              "index": 9,
+              "weight": 10,
+              "question": "A unidade padrão de tensão no SI é:",
+              "options": {
+                "a": "Newton",
+                "b": "Watt",
+                "c": "Pascal",
+                "d": "Joule",
+                "e": "Ohm"
+              },
+              "answer": "c"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "NUT": {
+    "id": "NUT",
+    "name": "Nutrição",
+    "subjects": [
+      {
+        "id": "NTFNA",
+        "name": "Fundamentos da Nutrição",
+        "max_grade": 10,
+        "lessons": [
+          {
+            "id": "NTFNA001L",
+            "title": "Conceito de Nutrientes",
+            "content": "Aula introdutória sobre os principais nutrientes: carboidratos, proteínas, lipídios, vitaminas e minerais."
+          },
+          {
+            "id": "NTFNA002L",
+            "title": "Digestão e Absorção",
+            "content": "Descreve o processo de digestão e absorção dos alimentos no trato gastrointestinal."
+          },
+          {
+            "id": "NTFNA003L",
+            "title": "Metabolismo Energético",
+            "content": "Analisa como o corpo utiliza os macronutrientes para gerar energia."
+          },
+          {
+            "id": "NTFNA004L",
+            "title": "Avaliação Nutricional",
+            "content": "Apresenta métodos de avaliação do estado nutricional de indivíduos."
+          },
+          {
+            "id": "NTFNA005L",
+            "title": "Alimentação Saudável",
+            "content": "Discute os princípios de uma alimentação equilibrada segundo guias alimentares."
+          }
+        ],
+        "test": {
+          "id": "NTFNA001A",
+          "questions": [
+            {
+              "index": 0,
+              "weight": 10,
+              "question": "Qual dos seguintes é um macronutriente?",
+              "options": {
+                "a": "Vitamina C",
+                "b": "Ferro",
+                "c": "Proteína",
+                "d": "Zinco",
+                "e": "Cálcio"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 1,
+              "weight": 10,
+              "question": "A digestão começa em qual parte do corpo?",
+              "options": {
+                "a": "Estômago",
+                "b": "Esôfago",
+                "c": "Intestino delgado",
+                "d": "Boca",
+                "e": "Pâncreas"
+              },
+              "answer": "d"
+            },
+            {
+              "index": 2,
+              "weight": 10,
+              "question": "O metabolismo basal é:",
+              "options": {
+                "a": "A taxa de digestão dos alimentos.",
+                "b": "O número de refeições diárias.",
+                "c": "O gasto energético em repouso.",
+                "d": "A energia gasta durante exercícios.",
+                "e": "A absorção de proteínas."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 3,
+              "weight": 10,
+              "question": "Qual órgão está diretamente envolvido na absorção de nutrientes?",
+              "options": {
+                "a": "Pâncreas",
+                "b": "Intestino delgado",
+                "c": "Estômago",
+                "d": "Esôfago",
+                "e": "Fígado"
+              },
+              "answer": "b"
+            },
+            {
+              "index": 4,
+              "weight": 10,
+              "question": "A avaliação nutricional inclui:",
+              "options": {
+                "a": "Análise de humor.",
+                "b": "Verificação da taxa de juros.",
+                "c": "Histórico alimentar e dados antropométricos.",
+                "d": "Prescrição de medicamentos.",
+                "e": "Exame oftalmológico."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 5,
+              "weight": 10,
+              "question": "Os lipídios são importantes porque:",
+              "options": {
+                "a": "Aumentam a pressão arterial.",
+                "b": "Reduzem a absorção de cálcio.",
+                "c": "Fornecem energia e auxiliam na absorção de vitaminas.",
+                "d": "Diminuem o metabolismo.",
+                "e": "São fontes de proteína."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 6,
+              "weight": 10,
+              "question": "O Guia Alimentar para a População Brasileira recomenda:",
+              "options": {
+                "a": "Evitar frutas.",
+                "b": "Priorizar alimentos ultraprocessados.",
+                "c": "Basear a alimentação em alimentos in natura.",
+                "d": "Aumentar o consumo de açúcar refinado.",
+                "e": "Reduzir a ingestão de água."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 7,
+              "weight": 10,
+              "question": "As vitaminas lipossolúveis são absorvidas junto com:",
+              "options": {
+                "a": "Proteínas",
+                "b": "Água",
+                "c": "Lipídios",
+                "d": "Fibras",
+                "e": "Sódio"
+              },
+              "answer": "c"
+            },
+            {
+              "index": 8,
+              "weight": 10,
+              "question": "O ferro é essencial principalmente para:",
+              "options": {
+                "a": "Formação de tecido muscular.",
+                "b": "Transporte de oxigênio no sangue.",
+                "c": "Digestão de gorduras.",
+                "d": "Equilíbrio hormonal.",
+                "e": "Produção de vitamina D."
+              },
+              "answer": "b"
+            },
+            {
+              "index": 9,
+              "weight": 10,
+              "question": "Qual dos seguintes alimentos é rico em fibras?",
+              "options": {
+                "a": "Refrigerante",
+                "b": "Pão branco",
+                "c": "Lentilha",
+                "d": "Carne vermelha",
+                "e": "Leite"
+              },
+              "answer": "c"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "PSI": {
+    "id": "PSI",
+    "name": "Psicologia",
+    "subjects": [
+      {
+        "id": "PSTEO",
+        "name": "Teorias Psicológicas",
+        "max_grade": 10,
+        "lessons": [
+          {
+            "id": "PSTEO001L",
+            "title": "História da Psicologia",
+            "content": "Aborda a origem e desenvolvimento histórico da psicologia como ciência."
+          },
+          {
+            "id": "PSTEO002L",
+            "title": "Psicanálise",
+            "content": "Introdução à teoria freudiana, inconsciente, estruturas psíquicas e métodos clínicos."
+          },
+          {
+            "id": "PSTEO003L",
+            "title": "Behaviorismo",
+            "content": "Explora os fundamentos do comportamento observável e o condicionamento."
+          },
+          {
+            "id": "PSTEO004L",
+            "title": "Cognitivismo",
+            "content": "Apresenta as bases das teorias cognitivas e seus impactos na psicologia moderna."
+          },
+          {
+            "id": "PSTEO005L",
+            "title": "Humanismo",
+            "content": "Estudo das abordagens centradas na pessoa e da autorrealização."
+          }
+        ],
+        "test": {
+          "id": "PSTEO001A",
+          "questions": [
+            {
+              "index": 0,
+              "weight": 10,
+              "question": "A Psicanálise foi fundada por:",
+              "options": {
+                "a": "B. F. Skinner",
+                "b": "Jean Piaget",
+                "c": "Carl Rogers",
+                "d": "Sigmund Freud",
+                "e": "John Watson"
+              },
+              "answer": "d"
+            },
+            {
+              "index": 1,
+              "weight": 10,
+              "question": "O behaviorismo estuda:",
+              "options": {
+                "a": "O inconsciente.",
+                "b": "As emoções.",
+                "c": "A autorrealização.",
+                "d": "O comportamento observável.",
+                "e": "A espiritualidade."
+              },
+              "answer": "d"
+            },
+            {
+              "index": 2,
+              "weight": 10,
+              "question": "A abordagem humanista enfatiza:",
+              "options": {
+                "a": "A repressão de desejos.",
+                "b": "A análise do comportamento.",
+                "c": "A racionalidade lógica.",
+                "d": "O potencial humano e a autorrealização.",
+                "e": "O controle ambiental."
+              },
+              "answer": "d"
+            },
+            {
+              "index": 3,
+              "weight": 10,
+              "question": "Jean Piaget é conhecido por suas contribuições à:",
+              "options": {
+                "a": "Teoria do inconsciente.",
+                "b": "Psicologia humanista.",
+                "c": "Psicologia cognitiva.",
+                "d": "Psicologia social.",
+                "e": "Análise transacional."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 4,
+              "weight": 10,
+              "question": "O inconsciente é um conceito central em qual teoria?",
+              "options": {
+                "a": "Behaviorismo",
+                "b": "Humanismo",
+                "c": "Cognitivismo",
+                "d": "Psicanálise",
+                "e": "Estruturalismo"
+              },
+              "answer": "d"
+            },
+            {
+              "index": 5,
+              "weight": 10,
+              "question": "Carl Rogers é um expoente da:",
+              "options": {
+                "a": "Psicanálise freudiana.",
+                "b": "Terapia cognitiva.",
+                "c": "Terapia comportamental.",
+                "d": "Terapia centrada na pessoa.",
+                "e": "Psicologia biológica."
+              },
+              "answer": "d"
+            },
+            {
+              "index": 6,
+              "weight": 10,
+              "question": "O behaviorismo foi iniciado por:",
+              "options": {
+                "a": "Freud",
+                "b": "Watson",
+                "c": "Maslow",
+                "d": "Piaget",
+                "e": "Jung"
+              },
+              "answer": "b"
+            },
+            {
+              "index": 7,
+              "weight": 10,
+              "question": "O cognitivismo foca principalmente em:",
+              "options": {
+                "a": "Estímulo e resposta.",
+                "b": "Dinâmicas familiares.",
+                "c": "Processos mentais internos.",
+                "d": "Condições biológicas.",
+                "e": "A motivação sexual."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 8,
+              "weight": 10,
+              "question": "O que define a abordagem humanista?",
+              "options": {
+                "a": "Ênfase na repressão.",
+                "b": "Foco no determinismo ambiental.",
+                "c": "Valorização do livre-arbítrio e da experiência subjetiva.",
+                "d": "Ênfase em testes padronizados.",
+                "e": "Aplicação de punições."
+              },
+              "answer": "c"
+            },
+            {
+              "index": 9,
+              "weight": 10,
+              "question": "Qual teoria considera o desenvolvimento em estágios cognitivos?",
+              "options": {
+                "a": "Psicanálise",
+                "b": "Humanismo",
+                "c": "Behaviorismo",
+                "d": "Cognitivismo de Piaget",
+                "e": "Neurociência"
+              },
+              "answer": "d"
             }
           ]
         }

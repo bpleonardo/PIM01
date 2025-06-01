@@ -1,0 +1,602 @@
+{
+  "lucas.silva": {
+    "age": 20,
+    "username": "lucas.silva",
+    "full_name": "Lucas Andrade Silva",
+    "gender": "h",
+    "city": "Palmital",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO003L"
+    }
+  },
+  "mariana.oliveira": {
+    "age": 19,
+    "username": "mariana.oliveira",
+    "full_name": "Mariana Costa Oliveira",
+    "gender": "m",
+    "city": "Iepê",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC001L"
+    }
+  },
+  "rafael.pereira": {
+    "age": 33,
+    "username": "rafael.pereira",
+    "full_name": "Rafael Gomes Pereira",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA002L"
+    }
+  },
+  "beatriz.rocha": {
+    "age": 18,
+    "username": "beatriz.rocha",
+    "full_name": "Beatriz Almeida Rocha",
+    "gender": "m",
+    "city": "Cândido Mota",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC001L"
+    }
+  },
+  "pedro.ramos": {
+    "age": 19,
+    "username": "pedro.ramos",
+    "full_name": "Pedro Henrique Ramos",
+    "gender": "h",
+    "city": "Assis",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP002L"
+    }
+  },
+  "larissa.fernandes": {
+    "age": 20,
+    "username": "larissa.fernandes",
+    "full_name": "Larissa Moura Fernandes",
+    "gender": "m",
+    "city": "Iepê",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC003L"
+    }
+  },
+  "felipe.lima": {
+    "age": 27,
+    "username": "felipe.lima",
+    "full_name": "Felipe Cardoso Lima",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA005L"
+    }
+  },
+  "camila.machado": {
+    "age": 18,
+    "username": "camila.machado",
+    "full_name": "Camila Torres Machado",
+    "gender": "m",
+    "city": "Cândido Mota",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO005L"
+    }
+  },
+  "bruno.pinto": {
+    "age": 44,
+    "username": "bruno.pinto",
+    "full_name": "Bruno Carvalho Pinto",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC003L"
+    }
+  },
+  "aline.barros": {
+    "age": 30,
+    "username": "aline.barros",
+    "full_name": "Aline Souza Barros",
+    "gender": "m",
+    "city": "Assis",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO005L"
+    }
+  },
+  "joao.nascimento": {
+    "age": 18,
+    "username": "joao.nascimento",
+    "full_name": "João Victor Nascimento",
+    "gender": "h",
+    "city": "Palmital",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC002L"
+    }
+  },
+  "ana.duarte": {
+    "age": 49,
+    "username": "ana.duarte",
+    "full_name": "Ana Paula Duarte",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP001L"
+    }
+  },
+  "guilherme.teixeira": {
+    "age": 46,
+    "username": "guilherme.teixeira",
+    "full_name": "Guilherme Batista Teixeira",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA001L"
+    }
+  },
+  "leticia.cruz": {
+    "age": 19,
+    "username": "leticia.cruz",
+    "full_name": "Letícia Monteiro Cruz",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC004L"
+    }
+  },
+  "thiago.freitas": {
+    "age": 20,
+    "username": "thiago.freitas",
+    "full_name": "Thiago Ribeiro Freitas",
+    "gender": "h",
+    "city": "Palmital",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO003L"
+    }
+  },
+  "vanessa.lopes": {
+    "age": 18,
+    "username": "vanessa.lopes",
+    "full_name": "Vanessa Melo Lopes",
+    "gender": "m",
+    "city": "Assis",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP003L"
+    }
+  },
+  "daniel.araujo": {
+    "age": 20,
+    "username": "daniel.araujo",
+    "full_name": "Daniel Martins Araújo",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC003L"
+    }
+  },
+  "juliana.moreira": {
+    "age": 42,
+    "username": "juliana.moreira",
+    "full_name": "Juliana Farias Moreira",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO002L"
+    }
+  },
+  "matheus.guimaraes": {
+    "age": 19,
+    "username": "matheus.guimaraes",
+    "full_name": "Matheus Pires Guimarães",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA003L"
+    }
+  },
+  "renata.cunha": {
+    "age": 25,
+    "username": "renata.cunha",
+    "full_name": "Renata Dias Cunha",
+    "gender": "m",
+    "city": "Palmital",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC004L"
+    }
+  },
+  "andre.barbosa": {
+    "age": 20,
+    "username": "andre.barbosa",
+    "full_name": "André Luiz Barbosa",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO001L"
+    }
+  },
+  "fernanda.menezes": {
+    "age": 19,
+    "username": "fernanda.menezes",
+    "full_name": "Fernanda Castro Menezes",
+    "gender": "m",
+    "city": "Cândido Mota",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA005L"
+    }
+  },
+  "diego.rezende": {
+    "age": 29,
+    "username": "diego.rezende",
+    "full_name": "Diego Santana Rezende",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP002L"
+    }
+  },
+  "priscila.coutinho": {
+    "age": 23,
+    "username": "priscila.coutinho",
+    "full_name": "Priscila Neves Coutinho",
+    "gender": "m",
+    "city": "Cândido Mota",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC005L"
+    }
+  },
+  "eduardo.brito": {
+    "age": 35,
+    "username": "eduardo.brito",
+    "full_name": "Eduardo Tavares Brito",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA001L"
+    }
+  },
+  "tatiane.lima": {
+    "age": 32,
+    "username": "tatiane.lima",
+    "full_name": "Tatiane Bezerra Lima",
+    "gender": "m",
+    "city": "Palmital",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO003L"
+    }
+  },
+  "igor.costa": {
+    "age": 24,
+    "username": "igor.costa",
+    "full_name": "Igor Fernandes Costa",
+    "gender": "h",
+    "city": "Assis",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP004L"
+    }
+  },
+  "roberta.leal": {
+    "age": 20,
+    "username": "roberta.leal",
+    "full_name": "Roberta Viana Leal",
+    "gender": "m",
+    "city": "Palmital",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC001L"
+    }
+  },
+  "vinicius.moraes": {
+    "age": 19,
+    "username": "vinicius.moraes",
+    "full_name": "Vinícius Azevedo Moraes",
+    "gender": "h",
+    "city": "Assis",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA004L"
+    }
+  },
+  "sabrina.antunes": {
+    "age": 50,
+    "username": "sabrina.antunes",
+    "full_name": "Sabrina Rocha Antunes",
+    "gender": "m",
+    "city": "Cândido Mota",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO001L"
+    }
+  },
+  "leandro.prado": {
+    "age": 21,
+    "username": "leandro.prado",
+    "full_name": "Leandro Ferreira Prado",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC004L"
+    }
+  },
+  "carolina.lacerda": {
+    "age": 37,
+    "username": "carolina.lacerda",
+    "full_name": "Carolina Assis Lacerda",
+    "gender": "m",
+    "city": "Iepê",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP002L"
+    }
+  },
+  "rodrigo.queiroz": {
+    "age": 22,
+    "username": "rodrigo.queiroz",
+    "full_name": "Rodrigo Mendes Queiroz",
+    "gender": "h",
+    "city": "Assis",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC004L"
+    }
+  },
+  "elisa.campos": {
+    "age": 47,
+    "username": "elisa.campos",
+    "full_name": "Elisa Magalhães Campos",
+    "gender": "m",
+    "city": "Palmital",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO001L"
+    }
+  },
+  "wellington.vieira": {
+    "age": 48,
+    "username": "wellington.vieira",
+    "full_name": "Wellington Souza Vieira",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA003L"
+    }
+  },
+  "bianca.bastos": {
+    "age": 20,
+    "username": "bianca.bastos",
+    "full_name": "Bianca Correia Bastos",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC002L"
+    }
+  },
+  "alexandre.paiva": {
+    "age": 19,
+    "username": "alexandre.paiva",
+    "full_name": "Alexandre Nogueira Paiva",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO003L"
+    }
+  },
+  "rafaela.fonseca": {
+    "age": 18,
+    "username": "rafaela.fonseca",
+    "full_name": "Rafaela Lima Fonseca",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC003L"
+    }
+  },
+  "marcelo.xavier": {
+    "age": 40,
+    "username": "marcelo.xavier",
+    "full_name": "Marcelo Duarte Xavier",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA003L"
+    }
+  },
+  "thais.goulart": {
+    "age": 20,
+    "username": "thais.goulart",
+    "full_name": "Thaís Ribeiro Goulart",
+    "gender": "m",
+    "city": "Iepê",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP003L"
+    }
+  },
+  "cristiano.bernardes": {
+    "age": 19,
+    "username": "cristiano.bernardes",
+    "full_name": "Cristiano Silva Bernardes",
+    "gender": "h",
+    "city": "Cândido Mota",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO002L"
+    }
+  },
+  "natalia.figueiredo": {
+    "age": 18,
+    "username": "natalia.figueiredo",
+    "full_name": "Natália Torres Figueiredo",
+    "gender": "m",
+    "city": "Assis",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC001L"
+    }
+  },
+  "leonardo.braga": {
+    "age": 18,
+    "username": "leonardo.braga",
+    "full_name": "Leonardo Oliveira Braga",
+    "gender": "h",
+    "city": "Cândido Mota",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC004L"
+    }
+  },
+  "paula.lins": {
+    "age": 18,
+    "username": "paula.lins",
+    "full_name": "Paula Monteiro Lins",
+    "gender": "m",
+    "city": "Palmital",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA003L"
+    }
+  },
+  "henrique.correa": {
+    "age": 20,
+    "username": "henrique.correa",
+    "full_name": "Henrique Lima Corrêa",
+    "gender": "h",
+    "city": "Assis",
+    "course_id": "EGC",
+    "grades": {},
+    "current_lesson": {
+      "ECMEP": "ECMEP005L"
+    }
+  },
+  "isabela.andrade": {
+    "age": 18,
+    "username": "isabela.andrade",
+    "full_name": "Isabela Moura Andrade",
+    "gender": "m",
+    "city": "Paraguaçu Paulista",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO004L"
+    }
+  },
+  "fabio.bastos": {
+    "age": 18,
+    "username": "fabio.bastos",
+    "full_name": "Fábio Cunha Bastos",
+    "gender": "h",
+    "city": "Iepê",
+    "course_id": "NUT",
+    "grades": {},
+    "current_lesson": {
+      "NTFNA": "NTFNA002L"
+    }
+  },
+  "jessica.santana": {
+    "age": 18,
+    "username": "jessica.santana",
+    "full_name": "Jéssica Almeida Santana",
+    "gender": "m",
+    "city": "Iepê",
+    "course_id": "DIR",
+    "grades": {},
+    "current_lesson": {
+      "DIIDC": "DIIDC003L"
+    }
+  },
+  "caio.lopes": {
+    "age": 43,
+    "username": "caio.lopes",
+    "full_name": "Caio Augusto Lopes",
+    "gender": "h",
+    "city": "Paraguaçu Paulista",
+    "course_id": "ADS",
+    "grades": {},
+    "current_lesson": {
+      "ADPLC": "ADPLC004L"
+    }
+  },
+  "milena.dias": {
+    "age": 26,
+    "username": "milena.dias",
+    "full_name": "Milena Martins Dias",
+    "gender": "m",
+    "city": "Assis",
+    "course_id": "PSI",
+    "grades": {},
+    "current_lesson": {
+      "PSTEO": "PSTEO005L"
+    }
+  }
+}
